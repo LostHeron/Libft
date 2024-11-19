@@ -16,11 +16,32 @@
 
 int	main(void)
 {
-	char *msgft = "coucou toi mec";
-	char *msgor = "coucou toi mec";
+	char msgft[] = "coucou toi mec";
+	char a = '\0';
+	char msgor[] = "coucou toi mec";
+	char b = '\0';
 
-	ft_memset(msgft, 65, 2);
-	memset(msgor, 65, 2);
+	/* testing normal behaviour */
+	printf("ft_memset :\n");
+	ft_memset(msgft, 65, 12);
 	printf("%s\n", msgft);
+	printf("memset :\n");
+	memset(msgor, 65, 12);
+	printf("%s\n", msgor);
+
+	/* testing with size greater than array */
+	printf("ft_memset :\n");
+	ft_memset(msgft, 65, 100);
+	printf("%s\n", msgft);
+	printf("memset :\n");
+	memset(msgor, 65, 100);
+	printf("%s\n", msgor);
+
+	/* testing with NULL pointer */
+	printf("ft_memset :\n");
+	ft_memset(NULL, 65, 100);
+	printf("%s\n", msgft);
+	printf("memset :\n");
+	memset(NULL, 65, 100);
 	printf("%s\n", msgor);
 }

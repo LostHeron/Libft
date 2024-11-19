@@ -8,7 +8,11 @@ C_FILES := ft_isalpha.c \
 		   ft_isascii.c \
 		   ft_isprint.c \
 		   ft_strlen.c \
-		   ft_memset.c
+		   ft_memset.c \
+		   ft_putchar_fd.c \
+		   ft_putnbr_fd.c \
+		   ft_putstr_fd.c \
+		   ft_putendl_fd.c \
 
 OBJECTS := $(C_FILES:.c=.o)
 
@@ -22,9 +26,9 @@ $(OBJECTS): %.o: %.c libft.h
 	$(CC) -c $(FLAGS) $< -o $@
 
 clean:
-	rm *.o
+	rm -f *.o
 
 fclean: clean
-	rm $(NAME)
+	rm -f $(NAME)
 
 re: fclean all

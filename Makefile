@@ -16,6 +16,8 @@ C_FILES := ft_isalpha.c \
 		   ft_strlcat.c \
 		   ft_toupper.c \
 		   ft_tolower.c \
+		   ft_strchr.c \
+		   ft_strrchr.c \
 		   ft_putchar_fd.c \
 		   ft_putnbr_fd.c \
 		   ft_putstr_fd.c \

@@ -81,7 +81,13 @@ int	main(void)
 	ft_putnbr_fd(-2147483648LL, 2);
 	ft_putstr_fd("\nft_putnbr_fd(\"-2147483647LL\", 2) = ", 2);
 	ft_putnbr_fd(-2147483647LL, 2);
+	ft_putstr_fd("\n", 2);
 	ft_putnbr_fd(-2147483647ll, 2);
+	ft_putstr_fd("\n", 2);
+	ft_putnbr_fd(INT_MIN, 2);
+	ft_putstr_fd("\n", 2);
+	ft_putnbr_fd(INT_MAX, 2);
+	ft_putstr_fd("\n", 2);
 	ft_putstr_fd("\nft_putnbr_fd(\"0\", 1) = ", 1);
 	ft_putnbr_fd(0, 1);
 	ft_putstr_fd("\nft_putnbr_fd(\"-9\", 1) = ", 1);

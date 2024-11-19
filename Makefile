@@ -10,6 +10,7 @@ C_FILES := ft_isalpha.c \
 		   ft_strlen.c \
 		   ft_memset.c \
 		   ft_bzero.c \
+		   ft_memcpy.c \
 		   ft_putchar_fd.c \
 		   ft_putnbr_fd.c \
 		   ft_putstr_fd.c \

@@ -20,6 +20,7 @@ C_FILES := ft_isalpha.c \
 		   ft_strrchr.c \
 		   ft_strncmp.c \
 		   ft_memchr.c \
+		   ft_strnstr.c \
 		   ft_putchar_fd.c \
 		   ft_putnbr_fd.c \
 		   ft_putstr_fd.c \

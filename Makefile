@@ -20,6 +20,7 @@ C_FILES := ft_isalpha.c \
 		   ft_strrchr.c \
 		   ft_strncmp.c \
 		   ft_memchr.c \
+		   ft_memcmp.c \
 		   ft_strnstr.c \
 		   ft_atoi.c \
 		   ft_putchar_fd.c \
@@ -32,10 +33,10 @@ OBJECTS := $(C_FILES:.c=.o)
 .PHONY: all clean fclean re
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJECTS) 
 	ar rcs $(NAME) $^
 
-$(OBJECTS): %.o: %.c libft.h
+$(OBJECTS): %.o: %.c libft.h 
 	$(CC) -c $(FLAGS) $< -o $@
 
 clean:

@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -19,3 +20,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s_len = ft_strlen(s);
 	ft_max(
 }
+*/

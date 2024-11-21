@@ -26,45 +26,51 @@ void static	free_prev(char **res)//, int i_word)
 	return ;
 }
 
+static void	f1(const char *s, char c, int *i, int *j)
+{
+	while (s[*i] && s[*i] == c)
+		(*i)++;
+	*j = 0;
+	while (s[*i + *j] && s[*i + *j] != c)
+		(*j)++;
+}
+
+static int	f2(char **res, int i_word, int j)
+{
+	res[i_word] = malloc((j + 1) * sizeof(char));
+	if (res[i_word] == NULL)
+	{
+		free_prev(res);
+		return (1);
+	}
+	return (0);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	int		nb_words;
 	int		i_word;
 	int		i;
 	int		j;
 	char	**res;
 
-	nb_words = ft_countwords(s, c);
-	res = ft_calloc(nb_words + 1, sizeof(char *));
+	res = ft_calloc(ft_countwords(s, c) + 1, sizeof(char *));
 	if (res == NULL)
 		return (NULL);
 	i = 0;
 	i_word = 0;
 	while (s[i])
 	{
-		while (s[i] && s[i] == c)
-			i++;
-		j = 0;
-		while (s[i + j] && s[i + j] != c)
-			j++;
-		if (s[i])
-		{
-			res[i_word] = malloc((j + 1) * sizeof(char));
-			if (res[i_word] == NULL)
-			{
-				free_prev(res);
-				return (NULL);
-			}
-			j = 0;
-			while (s[i + j] && s[i + j] != c)
-			{
-				res[i_word][j] = s[i + j];
-				j++;
-			}
-			res[i_word][j] = '\0';
-			i += j;
-			i_word += 1;
-		}
+		f1(s, c, &i, &j);
+		if (s[i] == '\0')
+			return (res);
+		if (f2(res, i_word, j) == 1)
+			return (NULL);
+		j = -1;
+		while (s[i + ++j] && s[i + j] != c)
+			res[i_word][j] = s[i + j];
+		res[i_word][j] = '\0';
+		i += j;
+		i_word += 1;
 	}
 	return (res);
 }
@@ -93,7 +99,7 @@ void static	check(const char *s, char c)
 		printf(" - '%s'\n", res[i]);
 		i++;
 	}
-	free_prev(res);//, ft_countwords(s, c));
+	free_prev(res);
 	printf("\n");
 	return ;
 }
@@ -104,7 +110,6 @@ int	main(void)
 	check("      yo       la     team   ", ' ');
 	check("           ", ' ');
 	check("", ' ');
-	//check(NULL, ' ');
 	check("?", ' ');
 	check("  ?  ", ' ');
 	check("yo la team      bien        ou quoi         la       ? ", ' ');

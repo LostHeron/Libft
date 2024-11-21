@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	char	*res;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	res = malloc((s1_len + s2_len + 1) * sizeof(char));
@@ -55,5 +57,9 @@ int	main(void)
 	check("", "");
 	check("qspifjqsdf", "");
 	check("qspifjqsdf", "ehehmongars");
+
+	void	*a;
+	a = NULL;
+	check(a + 1, "yo");
 }
 */

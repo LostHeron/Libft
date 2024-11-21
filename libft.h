@@ -17,9 +17,6 @@
 # include <unistd.h>
 # include <limits.h>
 
-# define FT_MAX(A, B) (((A) > (B)) ? (A) : (B))
-# define FT_MIN(X, Y) (((A) < (B)) ? (A) : (B))
-
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);

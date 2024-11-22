@@ -41,6 +41,7 @@ C_FILES := ft_isalpha.c \
 OBJECTS := $(C_FILES:.c=.o)
 
 C_FILES_BONUS := ft_lstnew_bonus.c \
+				 ft_lstadd_front.c \
 
 OBJECTS_BONUS := $(C_FILES_BONUS:.c=.o)
 

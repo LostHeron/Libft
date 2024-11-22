@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:01:42 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/19 17:27:19 by jweber           ###   ########.fr       */
+/*   Updated: 2024/11/22 15:53:05 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,15 @@ void static	check(const void *s, int c, size_t n)
 
 int	main(void)
 {
-	int	arr[] = {202182159, 0, 0}; 
+	int		arr[] = {202182159, 0, 0};
+	void	*s;
 	// 202182159 
 	// = 00001100_00001101_00001110_00001111
 	// = 12_13_14_15
 	// but little endian so 15 first then 14 then 13 then 12
 	check(arr, 12, 3 * sizeof(int));
 	check(arr, -20, 3 * sizeof(int));
+	printf("la fin \n");
+	s = ft_memchr(NULL, 3, 3);
 }
 */

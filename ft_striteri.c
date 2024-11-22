@@ -1,45 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 13:31:49 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/22 15:51:15 by jweber           ###   ########.fr       */
+/*   Created: 2024/11/22 12:31:38 by jweber            #+#    #+#             */
+/*   Updated: 2024/11/22 12:47:14 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
-
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t	i;
-	char	*s_c;
+	int	i;
 
-	s_c = s;
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		*(s_c + i) = c;
+		f(i, s + i);
 		i++;
 	}
-	return ((void *) s);
+	return ;
 }
 
 /*
-#include <string.h>
 #include <stdio.h>
 
-static void	check(void *s, int c, size_t n)
+void	replace_space_underscore(unsigned int c, char *s)
 {
+	if (*s == ' ')
+		*s = '_';
+	return ;
+}
 
+static void	check(char *s, void (*f)(unsigned int, char *))
+{
+	printf("AVANT transfo : \n");
+	printf("s = %s\n", s);
+	ft_striteri(s, f);
+	printf("APRES transfo : \n");
+	printf("s = %s\n", s);
 }
 
 int	main(void)
 {
-	char s[] = "ldkjfmqjf";
-	ft_memset(NULL, 0, 3);
+	char str[] = "Yo la team";
+
+	check(str, &replace_space_underscore);
+	return (0);
 }
 */

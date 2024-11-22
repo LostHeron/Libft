@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 09:47:56 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/19 10:03:46 by jweber           ###   ########.fr       */
+/*   Updated: 2024/11/22 15:40:54 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*dest_c;
 	char	*src_c;
 
-	if (dest == NULL && src == NULL)
-		return (NULL);
 	i = 0;
 	dest_c = dest;
 	src_c = (char *) src;
@@ -46,18 +44,20 @@ int	main(void)
 	printf("avant change : \n");
 	printf("%s\n", tbchange_or);
 	//ft_memcpy(tbchange_or, src, n_value);
-	memcpy(NULL, NULL, n_value);
+	//ft_memcpy(tbchange_or, NULL, n_value);
+	//ft_memcpy(NULL, src, n_value);
+	ft_memcpy(NULL, NULL, n_value);
 	printf("apres change : \n");
 	printf("%s\n", tbchange_or);
 	printf("\n");
 
-	printf("my function\n");
-	printf("avant change : \n");
-	printf("%s\n", tbchange_ft);
+	// printf("my function\n");
+	// printf("avant change : \n");
+	// printf("%s\n", tbchange_ft);
 	// ft_memcpy(tbchange_ft, src, n_value);
-	memcpy(NULL, NULL, n_value);
-	printf("apres change : \n");
-	printf("%s\n", tbchange_ft);
-	printf("\n");
+	// //memcpy(NULL, NULL, n_value);
+	// printf("apres change : \n");
+	// printf("%s\n", tbchange_ft);
+	// printf("\n");
 }
 */

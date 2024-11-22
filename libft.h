@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:09:40 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/21 14:23:46 by jweber           ###   ########.fr       */
+/*   Updated: 2024/11/22 12:47:51 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,17 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}				t_list;
+
+/* CAREFUL : function who require a pointer as input 
+ * need to be used with a valid pointer 
+ * function in this library are not meant to work with
+ * NULL pointer. Input need to be check before passing it to the function */
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -40,56 +51,17 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
-
-/* CAREFUL : function need to be used with a valid pointer 
-* calling this function with NULL will crash
-* when calling ft_strlen with NULL
-* input will need to be checked before calling this */
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-
-/* CAREFUL : function need to be used with a valid pointer 
-* calling this function with NULL will crash
-* when calling ft_strlen with NULL
-* input will need to be checked before calling this */
 char	*ft_strjoin(char const *s1, char const *s2);
-
-/* CAREFUL : function need to be used with a valid pointer 
-* calling this function with NULL will crash
-* when calling ft_strlen with NULL
-* input will need to be checked before calling this */
 char	*ft_strtrim(char const *s1, char const *set);
-
-/* CAREFUL : function need to be used with a valid pointer 
-* calling this function with NULL will crash
-* when calling ft_strlen with NULL
-* input will need to be checked before calling this */
 int		ft_countwords(char const *s, char c);
-
-/* CAREFUL : function need to be used with a valid pointer 
-* calling this function with NULL will crash
-* when calling ft_strlen with NULL
-* input will need to be checked before calling this */
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
-
-/* CAREFUL : function need to be used with a valid pointer 
-* calling this function with NULL will crash
-* when calling ft_strlen with NULL
-* input will need to be checked before calling this */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_putchar_fd(char c, int fd);
-
-/* CAREFUL : function need to be used with a valid pointer 
-* calling this function with NULL will crash
-* when calling ft_strlen with NULL
-* input will need to be checked before calling this */
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
-/* CAREFUL : function need to be used with a valid pointer 
-* calling this function with NULL will crash
-* when calling ft_strlen with NULL
-* input will need to be checked before calling this */
 void	ft_putendl_fd(char *s, int fd);
 
 #endif	

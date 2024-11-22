@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 10:22:19 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/19 10:51:33 by jweber           ###   ########.fr       */
+/*   Updated: 2024/11/22 15:42:07 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,12 @@ int	main(void)
 	dest = src + 7;
 	printf("avant modif : \n");
 	printf("%s\n", src);
-	ft_memmove(dest, src, 21);
+	//memmove(dest, NULL, 21);
+	//memmove(NULL, src, 21);
+	//memmove(NULL, NULL, 21);
+	//ft_memmove(dest, NULL, 21);
+	//ft_memmove(NULL, src, 21);
+	ft_memmove(NULL, NULL, 21);
 	printf("apres modif : \n");
 	printf("%s\n", src);
 }

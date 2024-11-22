@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:23:14 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/20 14:54:17 by jweber           ###   ########.fr       */
+/*   Updated: 2024/11/22 15:49:22 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,9 @@ void static	check(const void *s1, const void *s2, size_t n)
 
 int	main(void)
 {
-	int arr1[2];
-	int arr2[2];
+	int	arr1[2];
+	int	arr2[2];
+	int	res_or;
 
 	arr1[0] = 2145620124;
 	arr1[1] = -2145620124;
@@ -74,5 +75,7 @@ int	main(void)
 	check("coucouLaBasToi", "coucouYoMec", -1);
 	check("coucouL", "coucouY", -1);
 	check("coucouL", "coucouY", 6);
+	printf("\nla fin : \n");
+	res_or = memcmp(NULL, NULL, 6);
 }
 */

@@ -40,15 +40,56 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
+
+/* CAREFUL : function need to be used with a valid pointer 
+* calling this function with NULL will crash
+* when calling ft_strlen with NULL
+* input will need to be checked before calling this */
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+/* CAREFUL : function need to be used with a valid pointer 
+* calling this function with NULL will crash
+* when calling ft_strlen with NULL
+* input will need to be checked before calling this */
 char	*ft_strjoin(char const *s1, char const *s2);
+
+/* CAREFUL : function need to be used with a valid pointer 
+* calling this function with NULL will crash
+* when calling ft_strlen with NULL
+* input will need to be checked before calling this */
 char	*ft_strtrim(char const *s1, char const *set);
+
+/* CAREFUL : function need to be used with a valid pointer 
+* calling this function with NULL will crash
+* when calling ft_strlen with NULL
+* input will need to be checked before calling this */
 int		ft_countwords(char const *s, char c);
+
+/* CAREFUL : function need to be used with a valid pointer 
+* calling this function with NULL will crash
+* when calling ft_strlen with NULL
+* input will need to be checked before calling this */
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
+
+/* CAREFUL : function need to be used with a valid pointer 
+* calling this function with NULL will crash
+* when calling ft_strlen with NULL
+* input will need to be checked before calling this */
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_putchar_fd(char c, int fd);
+
+/* CAREFUL : function need to be used with a valid pointer 
+* calling this function with NULL will crash
+* when calling ft_strlen with NULL
+* input will need to be checked before calling this */
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+/* CAREFUL : function need to be used with a valid pointer 
+* calling this function with NULL will crash
+* when calling ft_strlen with NULL
+* input will need to be checked before calling this */
 void	ft_putendl_fd(char *s, int fd);
 
 #endif	

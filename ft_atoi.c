@@ -17,13 +17,13 @@ static long	calc_next_b(long *b, int sign, char c);
 int	ft_atoi(const char *nptr)
 {
 	long	b;
-	int		i;
-	int		sign;
+	long	i;
+	long	sign;
 
 	b = 0;
 	i = 0;
 	sign = 1;
-	while (('\b' <= nptr[i] && nptr[i] <= '\r') || nptr[i] == ' ')
+	while (('\t' <= nptr[i] && nptr[i] <= '\r') || nptr[i] == ' ')
 		i++;
 	if (nptr[i] == '+' || nptr[i] == '-')
 		if (nptr[i++] == '-')
@@ -39,7 +39,7 @@ int	ft_atoi(const char *nptr)
 
 long	calc_next_b(long *b, int sign, char c)
 {
-	int	b_prev;
+	long	b_prev;
 
 	b_prev = *b;
 	if (sign == -1)
@@ -101,5 +101,7 @@ int	main(void)
 	check("-13468406840531686546843483313543783835384");
 	check("2147483647");
 	check("-2147483648");
+	check("\010 9");
+	printf("%s\n", "\010 9");
 }
 */

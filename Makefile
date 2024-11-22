@@ -40,17 +40,27 @@ C_FILES := ft_isalpha.c \
 
 OBJECTS := $(C_FILES:.c=.o)
 
-.PHONY: all clean fclean re
+C_FILES_BONUS := ft_lstnew_bonus.c \
+
+OBJECTS_BONUS := $(C_FILES_BONUS:.c=.o)
+
+.PHONY: all clean fclean re bonus
 all: $(NAME)
 
 $(NAME): $(OBJECTS) 
 	ar rcs $(NAME) $^
 
-$(OBJECTS): %.o: %.c libft.h 
+bonus: .bonus
+
+.bonus: $(OBJECTS) $(OBJECTS_BONUS)
+	@touch .bonus
+	ar rcs $(NAME) $^
+
+%.o: %.c libft.h 
 	$(CC) -c $(FLAGS) $< -o $@
 
 clean:
-	rm -f *.o
+	rm -f $(OBJECTS) $(OBJECTS_BONUS) .bonus
 
 fclean: clean
 	rm -f $(NAME)

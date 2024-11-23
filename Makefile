@@ -42,7 +42,9 @@ OBJECTS := $(C_FILES:.c=.o)
 
 C_FILES_BONUS := ft_lstnew_bonus.c \
 				 ft_lstadd_front_bonus.c \
-				 ft_lstsize_bonus.c
+				 ft_lstsize_bonus.c \
+				 ft_lstlast_bonus.c \
+				 ft_lstadd_back_bonus.c \
 
 OBJECTS_BONUS := $(C_FILES_BONUS:.c=.o)
 

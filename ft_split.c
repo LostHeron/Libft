@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void static	free_prev(char **res)//, int i_word)
+static void	free_prev(char **res)//, int i_word)
 {
 	int	i;
 

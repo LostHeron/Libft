@@ -1,3 +1,4 @@
 *.out
 *.o
 libft.a
+.bonus

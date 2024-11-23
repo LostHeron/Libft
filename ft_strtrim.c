@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int	static	in_charset(char c, char const *set);
-int static	nb_left(char const *s1, char const *set);
-int static	nb_right(char const *s1, char const *set, int s1_len);
+static int	in_charset(char c, char const *set);
+static int	nb_left(char const *s1, char const *set);
+static int	nb_right(char const *s1, char const *set, int s1_len);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -42,7 +42,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (res);
 }
 
-int	static	in_charset(char c, char const *set)
+static int	in_charset(char c, char const *set)
 {
 	size_t	i;
 
@@ -58,7 +58,7 @@ int	static	in_charset(char c, char const *set)
 	return (1);
 }
 
-int static	nb_left(char const *s1, char const *set)
+static int	nb_left(char const *s1, char const *set)
 {
 	int	nb_char_l;
 
@@ -71,7 +71,7 @@ int static	nb_left(char const *s1, char const *set)
 	return (nb_char_l);
 }
 
-int static	nb_right(char const *s1, char const *set, int s1_len)
+static int	nb_right(char const *s1, char const *set, int s1_len)
 {
 	int	nb_char_r;
 

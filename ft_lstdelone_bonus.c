@@ -15,7 +15,26 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst->content != NULL)
+	{
 		del(lst->content);
+		lst->content = NULL;
+	}
 	free(lst);
 	return ;
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	t_list	*l1;
+	char	*str;
+
+	str = malloc(50);
+	ft_strlcpy(str, "yo la team", 50);
+	l1 = ft_lstnew(str);
+	printf("l1->content = '%s'\n", (char *) l1->content);
+	ft_lstdelone(l1, &free);
+}
+*/

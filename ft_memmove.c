@@ -53,7 +53,7 @@ int	main(void)
 	//memmove(NULL, NULL, 21);
 	//ft_memmove(dest, NULL, 21);
 	//ft_memmove(NULL, src, 21);
-	ft_memmove(NULL, NULL, 21);
+	memmove(NULL, NULL, 21);
 	printf("apres modif : \n");
 	printf("%s\n", src);
 }

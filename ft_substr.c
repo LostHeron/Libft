@@ -42,7 +42,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 /*
 #include <stdio.h>
 
-void static	check(char const *s, unsigned int start, size_t len)
+static void	check(char const *s, unsigned int start, size_t len)
 {
 	char	*res;
 

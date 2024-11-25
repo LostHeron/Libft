@@ -24,9 +24,15 @@ typedef struct s_list
 }				t_list;
 
 /* CAREFUL : function who require a pointer as input 
- * need to be used with a valid pointer 
+ * (either pointer to a string or pointer to a funtion)
+ * NEED to be used with a VALID POINTER !
  * function in this library are not meant to work with
- * NULL pointer. Input need to be check before passing it to the function */
+ * NULL pointer. Input need to be check before passing it to the function.
+ * Passing a NULL pointer to a string or NULL pointer to a function 
+ * in this library will result in undefined behaviour 
+ * (via dereferencing the NULL pointer) which implies program to crash.
+ * this issue can (and might) be resolved by assuring that the different
+ * input of the function are not NULL before processing furhter */
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -70,5 +76,7 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif	

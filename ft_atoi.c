@@ -37,7 +37,7 @@ int	ft_atoi(const char *nptr)
 	return ((int) b);
 }
 
-long	calc_next_b(long *b, int sign, char c)
+static long	calc_next_b(long *b, int sign, char c)
 {
 	long	b_prev;
 

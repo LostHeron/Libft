@@ -1,0 +1,99 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/25 12:20:43 by jweber            #+#    #+#             */
+/*   Updated: 2024/11/25 12:37:27 by jweber           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*res;
+	t_list	*tmp;
+
+	res = NULL;
+	while (lst != NULL)
+	{
+		if (lst->content != NULL)
+			tmp = ft_lstnew(f(lst->content));
+		else
+			tmp->content = NULL;
+		if (tmp == NULL)
+		{
+			ft_lstclear(&res, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&res, tmp);
+		lst = lst->next;
+	}
+	return (res);
+}
+
+/*
+#include <stdio.h>
+
+static void	*f1(void *s)
+{
+	int		s_len;
+	int		i;
+	void	*res;
+	char	*res_c;
+
+	s_len = ft_strlen((char *) s);
+	res = malloc((s_len + 1) * sizeof(char));
+	ft_memcpy(res, s, (s_len + 1) * sizeof(char));
+	res_c = res;
+	i = 0;
+	while (res_c[i])
+	{
+		if (i % 3 == 0)
+			res_c[i] = 'A';
+		i++;
+	}
+	return (res);
+}
+
+static void	print_list(t_list *l1)
+{
+	while (l1 != NULL)
+	{
+		printf("- %s\n", (char *) l1->content);
+		l1 = l1->next;
+	}
+}
+
+int	main(void)
+{
+	t_list	*l;
+	t_list	*l2;
+
+	l = ft_lstnew(malloc(50 * sizeof(char)));
+	if (l == NULL)
+		return (1);
+	ft_strlcpy(l->content, "yo la team", 50 * sizeof(char));
+	l->next = ft_lstnew(malloc(50 * sizeof(char)));
+	if (l->next == NULL)
+		return (1);
+	ft_strlcpy(l->next->content, "comment va ?", 50 * sizeof(char));
+	l->next->next = ft_lstnew(malloc(50 * sizeof(char)));
+	if (l->next->next == NULL)
+		return (1);
+	ft_strlcpy(l->next->next->content, "ca se passe ou?", 50 * sizeof(char));
+	l2 = ft_lstmap(l, &f1, &free);
+	if (l2 == NULL)
+		return (1);
+	printf("l = \n");
+	print_list(l);
+	printf("l2 = \n");
+	print_list(l2);
+	ft_lstclear(&l, &free);
+	ft_lstclear(&l2, &free);
+	return (0);
+}
+*/

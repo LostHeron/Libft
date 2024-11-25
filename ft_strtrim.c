@@ -85,7 +85,7 @@ static int	nb_right(char const *s1, char const *set, int s1_len)
 /*
 #include <stdio.h>
 
-void static	check(char const *s1, char const *set)
+static void check(char const *s1, char const *set)
 {
 	char	*res;
 

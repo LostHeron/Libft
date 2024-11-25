@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 19:08:59 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/23 19:13:11 by jweber           ###   ########.fr       */
+/*   Updated: 2024/11/25 09:24:05 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	if (lst->content != NULL)
 	{
 		del(lst->content);
-		lst->content = NULL;
 	}
 	free(lst);
 	return ;

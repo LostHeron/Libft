@@ -12,28 +12,112 @@
 
 #include "libft.h"
 
+static void	*my_ft_lstclear(t_list **p_res, void (*del)(void *));
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*res;
 	t_list	*tmp;
+	void	*res_f;
 
 	res = NULL;
 	while (lst != NULL)
 	{
-		if (lst->content != NULL)
-			tmp = ft_lstnew(f(lst->content));
+		if (lst -> content != NULL)
+			res_f = f(lst->content);
 		else
-			tmp->content = NULL;
+			res_f = NULL;
+		if (res_f == NULL)
+			return (my_ft_lstclear(&res, del));
+		tmp = ft_lstnew(res_f);
 		if (tmp == NULL)
 		{
+			del(res_f);
 			ft_lstclear(&res, del);
-			return (NULL);
+			return (res);
 		}
 		ft_lstadd_back(&res, tmp);
 		lst = lst->next;
 	}
 	return (res);
 }
+
+static void	*my_ft_lstclear(t_list **p_res, void (*del)(void *))
+{
+	ft_lstclear(p_res, del);
+	return (NULL);
+}
+
+/*
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*res;
+	t_list	*tmp;
+	void	*res_f;
+	int		i;
+
+	res = NULL;
+	i = 0;
+	while (lst != NULL)
+	{
+		if (lst->content == NULL)
+		{
+			ft_lstclear(&res, del);
+			return (res);
+		}
+		res_f = f(lst->content);
+		if (res_f == NULL)
+		{
+			ft_lstclear(&res, del);
+			return (NULL);
+		}
+		tmp = ft_lstnew(res_f);
+		if (tmp == NULL)
+		{
+			if (res_f != NULL)
+				del(res_f);
+			ft_lstclear(&res, del);
+			return (res);
+		}
+		ft_lstadd_back(&res, tmp);
+		lst = lst->next;
+		i++;
+	}
+	return (res);
+}
+*/
+
+/*
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*res;
+	t_list	*tmp;
+	void	*res_f;
+	int		i;
+
+	res = NULL;
+	i = 0;
+	while (lst != NULL)
+	{
+		if (lst->content != NULL)
+			res_f = f(lst->content);
+		else
+			res_f = NULL;
+		tmp = ft_lstnew(res_f);
+		if (tmp == NULL)
+		{
+			if (res_f != NULL)
+				del(res_f);
+			ft_lstclear(&res, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&res, tmp);
+		lst = lst->next;
+		i++;
+	}
+	return (res);
+}
+*/
 
 /*
 #include <stdio.h>
@@ -87,7 +171,11 @@ int	main(void)
 	ft_strlcpy(l->next->next->content, "ca se passe ou?", 50 * sizeof(char));
 	l2 = ft_lstmap(l, &f1, &free);
 	if (l2 == NULL)
+	{
+		printf("on rentre ici ou on doit free la list l\n");
+		ft_lstclear(&l, &free);
 		return (1);
+	}
 	printf("l = \n");
 	print_list(l);
 	printf("l2 = \n");

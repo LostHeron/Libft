@@ -12,21 +12,21 @@
 
 #include "libft.h"
 
-static void	free_recursive(t_list *lst, void (*del)(void *))
-{
-	if (lst != NULL)
-	{
-		free_recursive(lst->next, del);
-		if (lst->content != NULL)
-			del(lst->content);
-		free(lst);
-	}
-}
+static void	free_recursive(t_list *lst, void (*del)(void *));
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	free_recursive(*lst, del);
 	*lst = NULL;
+}
+
+static void	free_recursive(t_list *lst, void (*del)(void *))
+{
+	if (lst != NULL)
+	{
+		free_recursive(lst->next, del);
+		ft_lstdelone(lst, del);
+	}
 }
 
 /*

@@ -14,3 +14,16 @@ int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
+
+/*
+#include <stdio.h>
+#include <ctype.h>
+
+int	main(void)
+{
+	printf("%i\n", ft_isdigit('0'));
+	printf("%i\n", isdigit('0'));
+	printf("%i\n", ft_isdigit('A'));
+	printf("%i\n", isdigit('A'));
+}
+*/

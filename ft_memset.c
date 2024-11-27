@@ -32,11 +32,6 @@ void	*ft_memset(void *s, int c, size_t n)
 #include <string.h>
 #include <stdio.h>
 
-static void	check(void *s, int c, size_t n)
-{
-
-}
-
 int	main(void)
 {
 	char s[] = "ldkjfmqjf";

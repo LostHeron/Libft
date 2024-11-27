@@ -63,7 +63,8 @@ int	main(void)
 	// but little endian so 15 first then 14 then 13 then 12
 	check(arr, 12, 3 * sizeof(int));
 	check(arr, -20, 3 * sizeof(int));
+	check(arr, 202182159, 3 * sizeof(int));
 	printf("la fin \n");
-	s = ft_memchr(NULL, 3, 3);
+	//s = memchr(NULL, 3, 3);
 }
 */

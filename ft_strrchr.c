@@ -55,5 +55,6 @@ int	main(void)
 	check("OnEstIciEheh", 'O');
 	check("OnEstIciEheh", '\0');
 	check("OnEstIciEheh", 'E');
+	check("OnEstIciEheh", 'a');
 }
 */

@@ -16,19 +16,16 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp;
 
-	if (lst != NULL)
+	if (*lst == NULL)
+		*lst = new;
+	else
 	{
-		if (*lst == NULL)
-			*lst = new;
-		else
+		tmp = *lst;
+		while (tmp->next != NULL)
 		{
-			tmp = *lst;
-			while (tmp->next != NULL)
-			{
-				tmp = tmp->next;
-			}
-			tmp->next = new;
+			tmp = tmp->next;
 		}
+		tmp->next = new;
 	}
 	return ;
 }

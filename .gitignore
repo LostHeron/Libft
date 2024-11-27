@@ -3,4 +3,4 @@
 libft.a
 .bonus
 libftTester/
-
+*.log

@@ -52,6 +52,8 @@ C_FILES_BONUS := ft_lstnew_bonus.c \
 
 OBJECTS_BONUS := $(C_FILES_BONUS:.c=.o)
 
+D_FILES = $(OBJECTS:.o=.d) $(OBJECTS_BONUS:.o=.d)
+
 .PHONY: all clean fclean re bonus
 all: $(NAME)
 

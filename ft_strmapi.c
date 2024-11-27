@@ -12,11 +12,6 @@
 
 #include "libft.h"
 
-/* CAREFUL : function need to be used with a valid pointer 
-* calling this function with NULL will crash
-* when calling ft_strlen with NULL
-* input will need to be checked before calling this */
-
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	s_len;

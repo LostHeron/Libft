@@ -12,20 +12,16 @@
 
 #include "libft.h"
 
-static int	ft_get_size(int n)
-{
-	int	n_c;
-	int	i;
+static int	ft_get_size(int n);
+static char	*ft_itoa_pos(int n);
+static char	*ft_itoa_neg(int n);
 
-	n_c = n;
-	i = 0;
-	while (!(-9 <= n_c && n_c <= 9))
-	{
-		n_c = n_c / 10;
-		i++;
-	}
-	i++;
-	return (i);
+char	*ft_itoa(int n)
+{
+	if (n < 0)
+		return (ft_itoa_neg(n));
+	else
+		return (ft_itoa_pos(n));
 }
 
 static char	*ft_itoa_pos(int n)
@@ -75,12 +71,20 @@ static char	*ft_itoa_neg(int n)
 	return (res);
 }
 
-char	*ft_itoa(int n)
+static int	ft_get_size(int n)
 {
-	if (n < 0)
-		return (ft_itoa_neg(n));
-	else
-		return (ft_itoa_pos(n));
+	int	n_c;
+	int	i;
+
+	n_c = n;
+	i = 0;
+	while (!(-9 <= n_c && n_c <= 9))
+	{
+		n_c = n_c / 10;
+		i++;
+	}
+	i++;
+	return (i);
 }
 
 /*

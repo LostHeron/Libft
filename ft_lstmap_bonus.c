@@ -23,7 +23,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	res = NULL;
 	while (lst != NULL)
 	{
-		if (lst -> content != NULL)
+		if (lst->content != NULL)
 			res_f = f(lst->content);
 		else
 			res_f = NULL;

@@ -12,7 +12,40 @@
 
 #include "libft.h"
 
-static void	free_prev(char **res)//, int i_word)
+static void	free_prev(char **res);
+static void	f1(const char *s, char c, int *i, int *j);
+static int	f2(char **res, int i_word, int j);
+
+char	**ft_split(char const *s, char c)
+{
+	int		i_word;
+	int		i;
+	int		j;
+	char	**res;
+
+	res = ft_calloc(ft_countwords(s, c) + 1, sizeof(char *));
+	if (res == NULL)
+		return (NULL);
+	i = 0;
+	i_word = 0;
+	while (s[i])
+	{
+		f1(s, c, &i, &j);
+		if (s[i] == '\0')
+			return (res);
+		if (f2(res, i_word, j) == 1)
+			return (NULL);
+		j = -1;
+		while (s[i + ++j] && s[i + j] != c)
+			res[i_word][j] = s[i + j];
+		res[i_word][j] = '\0';
+		i += j;
+		i_word += 1;
+	}
+	return (res);
+}
+
+static void	free_prev(char **res)
 {
 	int	i;
 
@@ -44,35 +77,6 @@ static int	f2(char **res, int i_word, int j)
 		return (1);
 	}
 	return (0);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	int		i_word;
-	int		i;
-	int		j;
-	char	**res;
-
-	res = ft_calloc(ft_countwords(s, c) + 1, sizeof(char *));
-	if (res == NULL)
-		return (NULL);
-	i = 0;
-	i_word = 0;
-	while (s[i])
-	{
-		f1(s, c, &i, &j);
-		if (s[i] == '\0')
-			return (res);
-		if (f2(res, i_word, j) == 1)
-			return (NULL);
-		j = -1;
-		while (s[i + ++j] && s[i + j] != c)
-			res[i_word][j] = s[i + j];
-		res[i_word][j] = '\0';
-		i += j;
-		i_word += 1;
-	}
-	return (res);
 }
 
 /*

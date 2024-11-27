@@ -64,11 +64,13 @@ bonus: .bonus
 	@touch .bonus
 	ar rcs $(NAME) $^
 
-%.o: %.c libft.h 
-	$(CC) -c $(FLAGS) $< -o $@
+-include $(D_FILES)
+
+%.o: %.c  
+	$(CC) -c $(FLAGS) -MMD -MP -I . $< -o $@
 
 clean:
-	rm -f $(OBJECTS) $(OBJECTS_BONUS) .bonus
+	rm -f $(OBJECTS) $(OBJECTS_BONUS) $(D_FILES) .bonus
 
 fclean: clean
 	rm -f $(NAME)

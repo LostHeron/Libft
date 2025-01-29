@@ -5,3 +5,5 @@ libft.a
 libftTester/
 *.log
 *.d
+*.json
+.cache/

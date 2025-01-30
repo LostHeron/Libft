@@ -6,11 +6,11 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:24:10 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/21 11:31:21 by jweber           ###   ########.fr       */
+/*   Updated: 2025/01/30 16:55:08 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "string.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

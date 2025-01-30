@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   standard.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:47:24 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:48:05 by jweber           ###   ########.fr       */
+/*   Created: 2025/01/30 16:40:03 by jweber            #+#    #+#             */
+/*   Updated: 2025/01/30 16:56:40 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "io.h"
+#ifndef STANDARD_H
+# define STANDARD_H
 
-int	ft_putstr_fd(char *s, int fd)
-{
-	int	val;
+# include <stdlib.h>
+# include <limits.h>
 
-	val = write(fd, s, ft_strlen(s));
-	if (val < 0)
-		return (-1);
-	else
-		return (val);
-}
+int		ft_atoi(const char *nptr);
+void	*ft_calloc(size_t nmemb, size_t size);
+int		ft_countwords(char const *s, char c);
+char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
+
+#endif

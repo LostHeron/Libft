@@ -20,16 +20,16 @@ MEMORY_FILES := ft_memset.c \
 				ft_memchr.c \
 				ft_memcmp.c \
 
-LIST_DIR := src/list/
-LIST_FILES := ft_lstnew.c \
-			  ft_lstadd_front.c \
-			  ft_lstsize.c \
-			  ft_lstlast.c \
-			  ft_lstadd_back.c \
-			  ft_lstdelone.c \
-			  ft_lstclear.c \
-			  ft_lstiter.c \
-			  ft_lstmap.c \
+LIST_SINGLE_DIR := src/lists/single/
+LIST_SINGLE_FILES := ft_s_lstnew.c \
+					 ft_s_lstadd_front.c \
+			  		 ft_s_lstsize.c \
+			  		 ft_s_lstlast.c \
+			  		 ft_s_lstadd_back.c \
+			  		 ft_s_lstdelone.c \
+			  		 ft_s_lstclear.c \
+			  		 ft_s_lstiter.c \
+			  		 ft_s_lstmap.c \
 
 STRING_DIR := src/string/
 STRING_FILES := ft_strlen.c \
@@ -62,7 +62,7 @@ IO_FILES := ft_putchar_fd.c \
 
 C_FILES := $(addprefix $(CHAR_DIR), $(CHAR_FILES)) \
 		   $(addprefix $(MEMORY_DIR), $(MEMORY_FILES)) \
-		   $(addprefix $(LIST_DIR), $(LIST_FILES)) \
+		   $(addprefix $(LIST_SINGLE_DIR), $(LIST_SINGLE_FILES)) \
 		   $(addprefix $(STRING_DIR), $(STRING_FILES)) \
 		   $(addprefix $(STANDARD_DIR), $(STANDARD_FILES)) \
 		   $(addprefix $(IO_DIR), $(IO_FILES)) \
@@ -81,7 +81,7 @@ $(NAME): $(OBJ_FILES)
 
 -include $(DEPENDANCY_FILES)
 
-$(OBJ_DIR)%.o: %.c | $(OBJ_DIR)$(CHAR_DIR) $(OBJ_DIR)$(MEMORY_DIR) $(OBJ_DIR)$(LIST_DIR) $(OBJ_DIR)$(STRING_DIR) $(OBJ_DIR)$(STANDARD_DIR) $(OBJ_DIR)$(IO_DIR) 
+$(OBJ_DIR)%.o: %.c | $(OBJ_DIR)$(CHAR_DIR) $(OBJ_DIR)$(MEMORY_DIR) $(OBJ_DIR)$(LIST_SINGLE_DIR) $(OBJ_DIR)$(STRING_DIR) $(OBJ_DIR)$(STANDARD_DIR) $(OBJ_DIR)$(IO_DIR) 
 	$(CC) -c $(FLAGS) -MMD -MP -I includes $< -o $@
 
 $(OBJ_DIR)$(CHAR_DIR):
@@ -90,7 +90,7 @@ $(OBJ_DIR)$(CHAR_DIR):
 $(OBJ_DIR)$(MEMORY_DIR):
 	mkdir -p $@
 
-$(OBJ_DIR)$(LIST_DIR):
+$(OBJ_DIR)$(LIST_SINGLE_DIR):
 	mkdir -p $@
 
 $(OBJ_DIR)$(STRING_DIR):

@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   lists_double_circular.h                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:47:24 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:48:05 by jweber           ###   ########.fr       */
+/*   Created: 2025/01/30 17:05:33 by jweber            #+#    #+#             */
+/*   Updated: 2025/01/30 17:18:13 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "io.h"
+#ifndef LISTS_DOUBLE_CIRCULAR_H
+# define LISTS_DOUBLE_CIRCULAR_H
 
-int	ft_putstr_fd(char *s, int fd)
+# include <stdlib.h>
+
+typedef struct s_node
 {
-	int	val;
+	void			*content;
+	struct s_node	*next;
+	struct s_node	*prev;
+}	t_node;
 
-	val = write(fd, s, ft_strlen(s));
-	if (val < 0)
-		return (-1);
-	else
-		return (val);
-}
+typedef struct s_stack
+{
+	int		size;
+	t_node	*head;
+}			t_stack;
+
+#endif

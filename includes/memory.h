@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   memory.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:47:24 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:48:05 by jweber           ###   ########.fr       */
+/*   Created: 2025/01/30 16:34:35 by jweber            #+#    #+#             */
+/*   Updated: 2025/01/30 16:39:31 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "io.h"
+#ifndef MEMORY_H
+# define MEMORY_H
 
-int	ft_putstr_fd(char *s, int fd)
-{
-	int	val;
+# include <stdlib.h>
 
-	val = write(fd, s, ft_strlen(s));
-	if (val < 0)
-		return (-1);
-	else
-		return (val);
-}
+void	*ft_memset(void *s, int c, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	ft_bzero(void *s, size_t n);
+
+#endif

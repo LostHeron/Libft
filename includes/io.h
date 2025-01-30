@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   io.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:47:24 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:48:05 by jweber           ###   ########.fr       */
+/*   Created: 2025/01/30 16:33:14 by jweber            #+#    #+#             */
+/*   Updated: 2025/01/30 16:48:22 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "io.h"
+#ifndef IO_H
+# define IO_H
 
-int	ft_putstr_fd(char *s, int fd)
-{
-	int	val;
+# include <unistd.h>
+# include "string.h"
+# include <limits.h>
 
-	val = write(fd, s, ft_strlen(s));
-	if (val < 0)
-		return (-1);
-	else
-		return (val);
-}
+int		ft_putchar_fd(char c, int fd);
+int		ft_putstr_fd(char *s, int fd);
+int		ft_putnbr_fd(int n, int fd);
+int		ft_putunbr_fd(unsigned int n, int fd);
+void	ft_putendl_fd(char *s, int fd);
+
+#endif

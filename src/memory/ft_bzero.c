@@ -6,11 +6,11 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 09:22:16 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/19 09:26:50 by jweber           ###   ########.fr       */
+/*   Updated: 2025/01/30 16:48:52 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "memory.h"
 
 void	ft_bzero(void *s, size_t n)
 {

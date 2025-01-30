@@ -6,11 +6,11 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 09:17:14 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/20 10:00:13 by jweber           ###   ########.fr       */
+/*   Updated: 2025/01/30 16:52:04 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "string.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

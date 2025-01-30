@@ -6,11 +6,11 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:01:42 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/22 15:53:05 by jweber           ###   ########.fr       */
+/*   Updated: 2025/01/30 16:49:18 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "memory.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

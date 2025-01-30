@@ -6,11 +6,11 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:23:14 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/22 15:49:22 by jweber           ###   ########.fr       */
+/*   Updated: 2025/01/30 16:49:29 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "memory.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

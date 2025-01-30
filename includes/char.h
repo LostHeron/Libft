@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   char.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:47:24 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:48:05 by jweber           ###   ########.fr       */
+/*   Created: 2025/01/30 16:38:31 by jweber            #+#    #+#             */
+/*   Updated: 2025/01/30 16:39:12 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "io.h"
+#ifndef CHAR_H
+# define CHAR_H
 
-int	ft_putstr_fd(char *s, int fd)
-{
-	int	val;
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
-	val = write(fd, s, ft_strlen(s));
-	if (val < 0)
-		return (-1);
-	else
-		return (val);
-}
+#endif

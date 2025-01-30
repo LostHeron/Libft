@@ -6,11 +6,11 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:40:18 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/21 12:12:03 by jweber           ###   ########.fr       */
+/*   Updated: 2025/01/30 16:52:16 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "string.h"
 
 static int	in_charset(char c, char const *set);
 static int	nb_left(char const *s1, char const *set);

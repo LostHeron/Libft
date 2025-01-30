@@ -6,11 +6,11 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 16:31:12 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/22 16:54:20 by jweber           ###   ########.fr       */
+/*   Updated: 2025/01/30 16:55:08 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lists_single.h"
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {

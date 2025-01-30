@@ -6,11 +6,11 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 17:52:53 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/18 17:55:04 by jweber           ###   ########.fr       */
+/*   Updated: 2025/01/30 16:47:40 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "io.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

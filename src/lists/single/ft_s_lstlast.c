@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/23 17:58:44 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/23 18:00:30 by jweber           ###   ########.fr       */
+/*   Created: 2024/11/23 18:41:13 by jweber            #+#    #+#             */
+/*   Updated: 2025/01/30 16:55:08 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lists_single.h"
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	i;
-
-	i = 0;
-	while (lst != NULL)
+	if (lst != NULL)
 	{
-		i++;
-		lst = lst->next;
+		while (lst->next != NULL)
+		{
+			lst = lst->next;
+		}
+		return (lst);
 	}
-	return (i);
+	else
+		return (NULL);
 }
 
 /*
@@ -30,10 +31,10 @@ int	ft_lstsize(t_list *lst)
 
 int	main(void)
 {
-	t_list *l1;
-	t_list *l2;
-	t_list *l3;
-	int		i;
+	t_list	*l1;
+	t_list	*l2;
+	t_list	*l3;
+	t_list	*l4;
 
 	l1 = ft_lstnew("yo");
 	l2 = ft_lstnew("la");
@@ -41,12 +42,7 @@ int	main(void)
 	l1->next = l2;
 	l2->next = l3;
 
-	i = ft_lstsize(l1);
-	printf("i = %i\n", i);
-
-	t_list *l4;
-	i = ft_lstsize(l4);
-	printf("add l4 = %p\n", l4);
-	printf("i = %i\n", i);
+	l4 = ft_lstlast(l1);
+	printf("last string = '%s'\n", (char *) l4->content);
 }
 */

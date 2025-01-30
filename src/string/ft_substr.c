@@ -6,11 +6,12 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:18:28 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/21 11:00:14 by jweber           ###   ########.fr       */
+/*   Updated: 2025/01/30 16:52:35 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "string.h"
+#include "standard.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

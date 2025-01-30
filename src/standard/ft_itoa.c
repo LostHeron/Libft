@@ -6,11 +6,11 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:14:27 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/21 15:59:33 by jweber           ###   ########.fr       */
+/*   Updated: 2025/01/30 16:50:43 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "standard.h"
 
 static int	ft_get_size(int n);
 static char	*ft_itoa_pos(int n);

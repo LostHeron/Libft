@@ -6,11 +6,11 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:01:54 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/05 13:07:31 by jweber           ###   ########.fr       */
+/*   Updated: 2025/01/30 16:45:40 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "char.h"
 
 int	ft_isalnum(int c)
 {

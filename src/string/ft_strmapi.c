@@ -6,11 +6,11 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 09:40:10 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/22 09:40:15 by jweber           ###   ########.fr       */
+/*   Updated: 2025/01/30 16:51:54 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "string.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

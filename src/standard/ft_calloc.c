@@ -6,11 +6,12 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:57:13 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/20 14:57:20 by jweber           ###   ########.fr       */
+/*   Updated: 2025/01/30 16:50:31 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "standard.h"
+#include "memory.h"
 #include <stdint.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)

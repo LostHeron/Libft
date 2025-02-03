@@ -12,17 +12,20 @@
 
 #include "lists_double_circular.h"
 
-void	ft_dc_stack_add(t_stack *stack, t_node *node)
+int	ft_dc_stack_add(t_stack *stack, t_node *node)
 {
 	t_node	*old_last;
 	t_node	*old_first;
 
+	if (node == NULL)
+		return (1);
 	if (stack->size == 0)
 	{
 		stack->size = 1;
 		stack->head = node;
 		node->prev = node;
 		node->next = node;
+		return (0);
 	}
 	else
 	{
@@ -34,5 +37,6 @@ void	ft_dc_stack_add(t_stack *stack, t_node *node)
 		node->prev = old_last;
 		old_last->next = node;
 		old_first->prev = node;
+		return (0);
 	}
 }

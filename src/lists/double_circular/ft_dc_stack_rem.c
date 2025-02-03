@@ -33,6 +33,7 @@ t_node	*ft_dc_stack_rem(t_stack *pstack)
 	else
 	{
 		removed_node = pstack->head;
+		pstack->size--;
 		return (case_size_greater_2(pstack, removed_node));
 	}
 }

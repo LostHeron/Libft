@@ -27,6 +27,7 @@ t_node	*ft_dc_stack_clear(t_stack *pa, void *(*f)(void *))
 			f(tmp1->content);
 		free(tmp1);
 		tmp1 = tmp2;
+		i++;
 	}
 	pa->size = 0;
 	pa->head = NULL;

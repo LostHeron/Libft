@@ -10,23 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_countwords(char const *s, char c)
+#include "string.h"
+
+int	ft_countwords(char const *s, char *charset)
 {
 	int	i;
-	int	words;
+	int	nb_words;
 
 	i = 0;
-	words = 0;
+	nb_words = 0;
 	while (s[i])
 	{
-		while (s[i] && s[i] == c)
+		while (s[i] && ft_strchr(charset, s[i]) != NULL)
 			i++;
-		if (s[i] && s[i] != c)
-			words++;
-		while (s[i] && s[i] != c)
+		if (s[i] && ft_strchr(charset, s[i]) == NULL)
+			nb_words++;
+		while (s[i] && ft_strchr(charset, s[i]) == NULL)
 			i++;
 	}
-	return (words);
+	return (nb_words);
 }
 
 /*

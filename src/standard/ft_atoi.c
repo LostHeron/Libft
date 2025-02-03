@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "standard.h"
+#include <limits.h>
 
 static long	calc_next_b(long *b, int sign, char c);
 

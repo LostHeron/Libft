@@ -14,12 +14,11 @@
 # define STANDARD_H
 
 # include <stdlib.h>
-# include <limits.h>
 
 int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
-int		ft_countwords(char const *s, char c);
-char	**ft_split(char const *s, char c);
+int		ft_countwords(char const *s, char *charset);
+char	**ft_split(char const *s, char *charset);
 char	*ft_itoa(int n);
 
 #endif

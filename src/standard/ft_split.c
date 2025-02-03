@@ -11,84 +11,93 @@
 /* ************************************************************************** */
 
 #include "standard.h"
+#include "string.h"
 
-static void	free_prev(char **res);
-static void	f1(const char *s, char c, int *i, int *j);
-static int	f2(char **res, int i_word, int j);
+static int	init_res(char const *s, char ***res, int *nb_words, char *charset);
+static int	fill_res_i(const char *s, int i, int len_word, char **res_i);
+static void	*free_all(char **args);
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char *charset)
 {
-	int		i_word;
-	int		i;
-	int		j;
+	int	word_i;
+	int	i;
+	int	len_word;
+	int	nb_words;
 	char	**res;
-
-	res = ft_calloc(ft_countwords(s, c) + 1, sizeof(char *));
-	if (res == NULL)
+	
+	if (init_res(s, &res, &nb_words, charset) == 1) 
 		return (NULL);
 	i = 0;
-	i_word = 0;
+	word_i = -1;
 	while (s[i])
 	{
-		f1(s, c, &i, &j);
-		if (s[i] == '\0')
-			return (res);
-		if (f2(res, i_word, j) == 1)
-			return (NULL);
-		j = -1;
-		while (s[i + ++j] && s[i + j] != c)
-			res[i_word][j] = s[i + j];
-		res[i_word][j] = '\0';
-		i += j;
-		i_word += 1;
+		while (s[i] && ft_strchr(charset, s[i]) != NULL)
+			i++;
+		if (s[i] && ft_strchr(charset, s[i]) == NULL)
+			word_i++;
+		len_word = 0;
+		while (s[i + len_word] && ft_strchr(charset, s[i + len_word]) == NULL)
+			len_word++;
+		if (len_word != 0)
+			if (fill_res_i(s, i, len_word, &(res[word_i])) == 1)
+				return (free_all(res));
+		i = i + len_word;
 	}
 	return (res);
 }
 
-static void	free_prev(char **res)
+static int	init_res(char const *s, char ***res, int *nb_words, char *charset)
+{
+	*nb_words = ft_countwords(s, charset);
+	*res = ft_calloc((size_t) (*nb_words + 1), sizeof(char *));
+	if (*res == NULL)
+		return (1);
+	else
+		return (0);
+}
+
+static int	fill_res_i(const char *s, int i, int len_word, char **res_i)
+{
+	int	k;
+
+	*res_i = malloc((len_word + 1) * sizeof(char));
+	if (*res_i == NULL)
+		return (1);
+	k = 0;
+	while (k < len_word)
+	{
+		(*res_i)[k] = s[i + k];
+		k++;
+	}
+	(*res_i)[k] = '\0';
+	return (0);
+}
+
+static void	*free_all(char **args)
 {
 	int	i;
 
 	i = 0;
-	while (res[i] != NULL)
+	while (args[i] != NULL)
 	{
-		free(res[i]);
+		free(args[i]);
 		i++;
 	}
-	free(res);
-	return ;
-}
-
-static void	f1(const char *s, char c, int *i, int *j)
-{
-	while (s[*i] && s[*i] == c)
-		(*i)++;
-	*j = 0;
-	while (s[*i + *j] && s[*i + *j] != c)
-		(*j)++;
-}
-
-static int	f2(char **res, int i_word, int j)
-{
-	res[i_word] = malloc((j + 1) * sizeof(char));
-	if (res[i_word] == NULL)
-	{
-		free_prev(res);
-		return (1);
-	}
-	return (0);
+	free(args);
+	return (NULL);
 }
 
 /*
 #include <stdio.h>
 
-void static	check(const char *s, char c)
+void static	check(const char *s, char *c)
 {
 	char	**res;
 	int		i;
 
+	printf("\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	printf("s = \"%s\"\n", s);
-	printf("s = '%c'\n", c);
+	printf("s = '%s'\n", c);
 	printf("res : \n");
 	res = ft_split(s, c);
 	if (res == NULL)
@@ -103,19 +112,19 @@ void static	check(const char *s, char c)
 		printf(" - '%s'\n", res[i]);
 		i++;
 	}
-	free_prev(res);
+	free_all(res);
 	printf("\n");
 	return ;
 }
 
 int	main(void)
 {
-	check("yo la team", ' ');
-	check("      yo       la     team   ", ' ');
-	check("           ", ' ');
-	check("", ' ');
-	check("?", ' ');
-	check("  ?  ", ' ');
-	check("yo la team      bien        ou quoi         la       ? ", ' ');
+	check("yo la \n\nteam\n", " \n\t\r\n\t ");
+	check("      yo       la     team   ", " ");
+	check("           ", " ");
+	check("", " ");
+	check("?", " ");
+	check("  ?  ", " ");
+	check("yo la team      bien        ou quoi         la       ? ", " ");
 }
 */

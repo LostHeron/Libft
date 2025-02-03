@@ -13,7 +13,7 @@
 #include "lists_double_circular.h"
 #include "io.h"
 
-void	ft_dc_stack_print(t_stack stack, void (*f)(void *))
+void	ft_dc_stack_print(t_stack stack, void (*aff)(void *))
 {
 	int		i;
 	t_node	*tmp;
@@ -22,7 +22,8 @@ void	ft_dc_stack_print(t_stack stack, void (*f)(void *))
 	i = 0;
 	while (i < stack.size)
 	{
-		f(tmp->content);
+		aff(tmp->content);
 		tmp = tmp->next;
+		i++;
 	}
 }

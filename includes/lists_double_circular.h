@@ -28,7 +28,7 @@ typedef struct s_stack
 	t_node	*head;
 }			t_stack;
 
-t_node	*ft_dc_lstnew(void *content);
+t_node	*ft_dc_node_new(void *content);
 void	ft_dc_stack_add(t_stack *stack, t_node *node);
 t_node	*ft_dc_stack_rem(t_stack *pstack);
 void	ft_dc_stack_print(t_stack stack, void (*f)(void *));

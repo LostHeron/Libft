@@ -1,6 +1,6 @@
 NAME := libft.a
 CC := cc
-FLAGS := -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror
 
 
 CHAR_DIR := src/char/
@@ -30,6 +30,13 @@ LIST_SINGLE_FILES := ft_s_lstnew.c \
 			  		 ft_s_lstclear.c \
 			  		 ft_s_lstiter.c \
 			  		 ft_s_lstmap.c \
+
+LIST_DC_DIR := src/lists/double_circular/
+LIST_DC_FILES := ft_dc_node_new.c \
+				 ft_dc_stack_add.c \
+				 ft_dc_stack_rem.c \
+				 ft_dc_stack_clear.c \
+				 ft_dc_stack_print.c \
 
 STRING_DIR := src/string/
 STRING_FILES := ft_strlen.c \
@@ -63,6 +70,7 @@ IO_FILES := ft_putchar_fd.c \
 C_FILES := $(addprefix $(CHAR_DIR), $(CHAR_FILES)) \
 		   $(addprefix $(MEMORY_DIR), $(MEMORY_FILES)) \
 		   $(addprefix $(LIST_SINGLE_DIR), $(LIST_SINGLE_FILES)) \
+		   $(addprefix $(LIST_DC_DIR), $(LIST_DC_FILES)) \
 		   $(addprefix $(STRING_DIR), $(STRING_FILES)) \
 		   $(addprefix $(STANDARD_DIR), $(STANDARD_FILES)) \
 		   $(addprefix $(IO_DIR), $(IO_FILES)) \
@@ -72,7 +80,7 @@ OBJ_FILES := $(addprefix $(OBJ_DIR), $(C_FILES:.c=.o))
 DEPENDANCY_FILES := $(addprefix $(OBJ_DIR), $(C_FILES:.c=.d))
 
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test_dc
 
 all: $(NAME)
 
@@ -81,8 +89,8 @@ $(NAME): $(OBJ_FILES)
 
 -include $(DEPENDANCY_FILES)
 
-$(OBJ_DIR)%.o: %.c | $(OBJ_DIR)$(CHAR_DIR) $(OBJ_DIR)$(MEMORY_DIR) $(OBJ_DIR)$(LIST_SINGLE_DIR) $(OBJ_DIR)$(STRING_DIR) $(OBJ_DIR)$(STANDARD_DIR) $(OBJ_DIR)$(IO_DIR) 
-	$(CC) -c $(FLAGS) -MMD -MP -I includes $< -o $@
+$(OBJ_DIR)%.o: %.c | $(OBJ_DIR)$(CHAR_DIR) $(OBJ_DIR)$(MEMORY_DIR) $(OBJ_DIR)$(LIST_DC_DIR) $(OBJ_DIR)$(LIST_SINGLE_DIR) $(OBJ_DIR)$(STRING_DIR) $(OBJ_DIR)$(STANDARD_DIR) $(OBJ_DIR)$(IO_DIR) 
+	$(CC) -c $(CFLAGS) -MMD -MP -I includes $< -o $@
 
 $(OBJ_DIR)$(CHAR_DIR):
 	mkdir -p $@
@@ -91,6 +99,9 @@ $(OBJ_DIR)$(MEMORY_DIR):
 	mkdir -p $@
 
 $(OBJ_DIR)$(LIST_SINGLE_DIR):
+	mkdir -p $@
+
+$(OBJ_DIR)$(LIST_DC_DIR):
 	mkdir -p $@
 
 $(OBJ_DIR)$(STRING_DIR):
@@ -102,6 +113,7 @@ $(OBJ_DIR)$(STANDARD_DIR):
 $(OBJ_DIR)$(IO_DIR):
 	mkdir -p $@
 
+
 clean:
 	rm -rf $(OBJ_DIR)
 
@@ -110,3 +122,7 @@ fclean:
 	rm -f $(NAME)
 
 re: fclean all
+
+test_dc: $(NAME)
+	$(MAKE) all
+	$(CC) $(CFLAGS) -I includes/ $(LIST_DC_DIR)test.c -o test_dc.out $(NAME)

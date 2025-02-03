@@ -12,7 +12,7 @@
 
 #include "lists_double_circular.h"
 
-t_node	*ft_dc_lstnew(void *content)
+t_node	*ft_dc_node_new(void *content)
 {
 	t_node	*node;
 

@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "lists_double_circular.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -78,3 +79,4 @@ void	my_print(void *a)
 {
 	printf("%i\n", *((int *)a));
 }
+*/

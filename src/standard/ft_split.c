@@ -13,7 +13,6 @@
 #include "standard.h"
 #include "string.h"
 
-static int	init_res(char const *s, char ***res, int *nb_words, char *charset);
 static int	fill_res_i(const char *s, int i, int len_word, char **res_i);
 static void	*free_all(char **args);
 
@@ -22,10 +21,10 @@ char	**ft_split(char const *s, char *charset)
 	int	word_i;
 	int	i;
 	int	len_word;
-	int	nb_words;
 	char	**res;
 	
-	if (init_res(s, &res, &nb_words, charset) == 1) 
+	res = ft_calloc(ft_countwords(s, charset) + 1, sizeof(char *));
+	if (res == NULL)
 		return (NULL);
 	i = 0;
 	word_i = -1;
@@ -44,16 +43,6 @@ char	**ft_split(char const *s, char *charset)
 		i = i + len_word;
 	}
 	return (res);
-}
-
-static int	init_res(char const *s, char ***res, int *nb_words, char *charset)
-{
-	*nb_words = ft_countwords(s, charset);
-	*res = ft_calloc((size_t) (*nb_words + 1), sizeof(char *));
-	if (*res == NULL)
-		return (1);
-	else
-		return (0);
 }
 
 static int	fill_res_i(const char *s, int i, int len_word, char **res_i)

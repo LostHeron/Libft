@@ -18,11 +18,11 @@ static void	*free_all(char **args);
 
 char	**ft_split(char const *s, char *charset)
 {
-	int	word_i;
-	int	i;
-	int	len_word;
+	int		word_i;
+	int		i;
+	int		len_word;
 	char	**res;
-	
+
 	res = ft_calloc(ft_countwords(s, charset) + 1, sizeof(char *));
 	if (res == NULL)
 		return (NULL);

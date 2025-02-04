@@ -16,16 +16,17 @@
 
 static int	iter(int fd, const char *s,
 				va_list *pptr, int (*f[128])(va_list *, int *, int fd));
-static void	init_function_array(int (*f[128])(va_list *ptr, int *count, int fd));
-int	print_c(va_list *ptr, int *count, int fd);
-int	print_p(va_list *ptr, int *count, int fd);
-int	print_i(va_list *ptr, int *count, int fd);
-int	print_p(va_list *ptr, int *count, int fd);
-int	print_s(va_list *ptr, int *count, int fd);
-int	print_u(va_list *ptr, int *count, int fd);
-int	print_percent(va_list *ptr, int *count, int fd);
-int	print_x_lower(va_list *ptr, int *count, int fd);
-int	print_x_upper(va_list *ptr, int *count, int fd);
+static void	init_function_array(int (*f[128])(va_list *ptr,
+					int *count, int fd));
+int			print_c(va_list *ptr, int *count, int fd);
+int			print_p(va_list *ptr, int *count, int fd);
+int			print_i(va_list *ptr, int *count, int fd);
+int			print_p(va_list *ptr, int *count, int fd);
+int			print_s(va_list *ptr, int *count, int fd);
+int			print_u(va_list *ptr, int *count, int fd);
+int			print_percent(va_list *ptr, int *count, int fd);
+int			print_x_lower(va_list *ptr, int *count, int fd);
+int			print_x_upper(va_list *ptr, int *count, int fd);
 
 int	ft_printf_fd(int fd, const char *s, ...)
 {
@@ -90,4 +91,3 @@ static void	init_function_array(int (*f[128])(va_list *ptr, int *count, int fd))
 		i++;
 	}
 }
-

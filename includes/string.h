@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 16:42:05 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:56:27 by jweber           ###   ########.fr       */
+/*   Updated: 2025/02/04 13:46:37 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define STRING_H
 
 # include <stdlib.h>
-# include "standard.h"
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);

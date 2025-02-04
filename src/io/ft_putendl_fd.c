@@ -12,8 +12,18 @@
 
 #include "io.h"
 
-void	ft_putendl_fd(char *s, int fd)
+int	ft_putendl_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
-	ft_putchar_fd('\n', fd);
+	int	tmp;
+	int	val;
+
+	tmp = ft_putstr_fd(s, fd);
+	if (tmp < 0)
+		return (tmp);
+	val = tmp;
+	tmp = ft_putchar_fd('\n', fd);
+	if (tmp < 0)
+		return (tmp);
+	val += tmp;
+	return (val);
 }

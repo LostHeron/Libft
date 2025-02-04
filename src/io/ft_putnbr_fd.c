@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "io.h"
+#include <limits.h>
 
 static int	ft_putnbr_fd_recu(int n, int fd, int *i);
 
@@ -32,7 +33,7 @@ static int	ft_putnbr_fd_recu(int n, int fd, int *i)
 	if (n == INT_MIN)
 	{
 		*i = 11;
-		if (write(fd, "-2147483648", 11) < 0)
+		if (ft_putstr_fd("-2147483648", fd) < 0)
 			*i = -1;
 		return (*i);
 	}

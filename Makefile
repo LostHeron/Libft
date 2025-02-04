@@ -1,7 +1,7 @@
 NAME := libft.a
 CC := cc
 CFLAGS := -Wall -Wextra -Werror
-
+INCLUDES := includes/
 
 CHAR_DIR := src/char/
 CHAR_FILES := ft_isalpha.c \
@@ -66,6 +66,11 @@ IO_FILES := ft_putchar_fd.c \
             ft_putunbr_fd.c \
             ft_putstr_fd.c \
             ft_putendl_fd.c \
+			ft_putnbr_base_ull_fd.c \
+			ft_putnbr_base_u_fd.c \
+			ft_printf_utils2.c \
+			ft_printf_utils1.c \
+			ft_printf_fd.c \
 
 C_FILES := $(addprefix $(CHAR_DIR), $(CHAR_FILES)) \
 		   $(addprefix $(MEMORY_DIR), $(MEMORY_FILES)) \
@@ -90,7 +95,7 @@ $(NAME): $(OBJ_FILES)
 -include $(DEPENDANCY_FILES)
 
 $(OBJ_DIR)%.o: %.c | $(OBJ_DIR)$(CHAR_DIR) $(OBJ_DIR)$(MEMORY_DIR) $(OBJ_DIR)$(LIST_DC_DIR) $(OBJ_DIR)$(LIST_SINGLE_DIR) $(OBJ_DIR)$(STRING_DIR) $(OBJ_DIR)$(STANDARD_DIR) $(OBJ_DIR)$(IO_DIR) 
-	$(CC) -c $(CFLAGS) -MMD -MP -I includes $< -o $@
+	$(CC) -c $(CFLAGS) -MMD -MP -I $(INCLUDES) $< -o $@
 
 $(OBJ_DIR)$(CHAR_DIR):
 	mkdir -p $@
@@ -125,4 +130,8 @@ re: fclean all
 
 test_dc: $(NAME)
 	$(MAKE) all
-	$(CC) $(CFLAGS) -I includes/ $(LIST_DC_DIR)test.c -o test_dc.out $(NAME)
+	$(CC) $(CFLAGS) -I $(INCLUDES) $(LIST_DC_DIR)test_dc.c -o test_dc.out $(NAME)
+
+test : $(NAME)
+	$(MAKE) all
+	$(CC) $(CFLAGS) -I $(INCLUDES) test.c $(NAME)

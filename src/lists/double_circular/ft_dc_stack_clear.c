@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "lists_double_circular.h"
+#include <stdlib.h>
 
 t_node	*ft_dc_stack_clear(t_stack *pa, void *(*f)(void *))
 {

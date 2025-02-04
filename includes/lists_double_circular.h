@@ -13,8 +13,6 @@
 #ifndef LISTS_DOUBLE_CIRCULAR_H
 # define LISTS_DOUBLE_CIRCULAR_H
 
-# include <stdlib.h>
-
 typedef struct s_node
 {
 	void			*content;
@@ -30,6 +28,7 @@ typedef struct s_stack
 
 t_node	*ft_dc_node_new(void *content);
 int		ft_dc_stack_add(t_stack *stack, t_node *node);
+int		ft_dc_stack_add_back(t_stack *stack, t_node *node);
 t_node	*ft_dc_stack_rem(t_stack *pstack);
 t_node	*ft_dc_stack_clear(t_stack *pa, void *(*f)(void *));
 void	ft_dc_stack_print(t_stack stack, void (*f)(void *));

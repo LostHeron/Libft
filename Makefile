@@ -34,6 +34,7 @@ LIST_SINGLE_FILES := ft_s_lstnew.c \
 LIST_DC_DIR := src/lists/double_circular/
 LIST_DC_FILES := ft_dc_node_new.c \
 				 ft_dc_stack_add.c \
+				 ft_de_stack_add_back.c \
 				 ft_dc_stack_rem.c \
 				 ft_dc_stack_clear.c \
 				 ft_dc_stack_print.c \

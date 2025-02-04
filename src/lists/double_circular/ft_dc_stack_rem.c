@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "lists_double_circular.h"
+#include <stdlib.h>
 
 static t_node	*case_size_greater_2(t_stack *pstack, t_node *removed_node);
 

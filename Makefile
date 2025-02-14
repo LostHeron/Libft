@@ -12,6 +12,9 @@ CHAR_FILES := ft_isalpha.c \
 			  ft_toupper.c \
               ft_tolower.c \
 
+MATH_DIR = src/math/
+MATH_FILES = ft_power.c \
+
 MEMORY_DIR := src/memory/
 MEMORY_FILES := ft_memset.c \
                 ft_bzero.c \
@@ -75,6 +78,7 @@ IO_FILES := ft_putchar_fd.c \
 			ft_printf_fd.c \
 
 C_FILES := $(addprefix $(CHAR_DIR), $(CHAR_FILES)) \
+		   $(addprefix $(MATH_DIR), $(MATH_FILES)) \
 		   $(addprefix $(MEMORY_DIR), $(MEMORY_FILES)) \
 		   $(addprefix $(LIST_SINGLE_DIR), $(LIST_SINGLE_FILES)) \
 		   $(addprefix $(LIST_DC_DIR), $(LIST_DC_FILES)) \
@@ -96,8 +100,11 @@ $(NAME): $(OBJ_FILES)
 
 -include $(DEPENDANCY_FILES)
 
-$(OBJ_DIR)%.o: %.c | $(OBJ_DIR)$(CHAR_DIR) $(OBJ_DIR)$(MEMORY_DIR) $(OBJ_DIR)$(LIST_DC_DIR) $(OBJ_DIR)$(LIST_SINGLE_DIR) $(OBJ_DIR)$(STRING_DIR) $(OBJ_DIR)$(STANDARD_DIR) $(OBJ_DIR)$(IO_DIR) 
+$(OBJ_DIR)%.o: %.c | $(OBJ_DIR)$(CHAR_DIR) $(OBJ_DIR)$(MATH_DIR) $(OBJ_DIR)$(MEMORY_DIR) $(OBJ_DIR)$(LIST_DC_DIR) $(OBJ_DIR)$(LIST_SINGLE_DIR) $(OBJ_DIR)$(STRING_DIR) $(OBJ_DIR)$(STANDARD_DIR) $(OBJ_DIR)$(IO_DIR) 
 	$(CC) -c $(CFLAGS) -MMD -MP -I $(INCLUDES) $< -o $@
+
+$(OBJ_DIR)$(MATH_DIR):
+	mkdir -p $@
 
 $(OBJ_DIR)$(CHAR_DIR):
 	mkdir -p $@

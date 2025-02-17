@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_labs.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 14:08:29 by jweber            #+#    #+#             */
-/*   Updated: 2025/02/17 11:54:06 by jweber           ###   ########.fr       */
+/*   Created: 2025/02/17 11:48:47 by jweber            #+#    #+#             */
+/*   Updated: 2025/02/17 11:49:34 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "math.h"
-
-int	main(void)
+long	ft_labs(long nb)
 {
-	int	a = 2000000000;
-	int	b = -2000000000;
-	a = ft_labs(a);
-	b = ft_labs(b);
-	long c = (long)a - (-b);
-	printf("a = %i\n", a);
-	printf("b = %i\n", b);
-	printf("c = %ld\n", c);
+	if (nb < 0)
+		return (-nb);
+	else
+		return (nb);
 }

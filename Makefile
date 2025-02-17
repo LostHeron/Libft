@@ -14,6 +14,8 @@ CHAR_FILES := ft_isalpha.c \
 
 MATH_DIR = src/math/
 MATH_FILES = ft_power.c \
+			 ft_abs.c \
+			 ft_labs.c \
 
 MEMORY_DIR := src/memory/
 MEMORY_FILES := ft_memset.c \

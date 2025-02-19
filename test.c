@@ -10,17 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "math.h"
+#include <fcntl.h>
+#include <stdlib.h>
+#include "io.h"
+#include "src/io/get_next_line/get_next_line.h"
 
 int	main(void)
 {
-	int	a = 2000000000;
-	int	b = -2000000000;
-	a = ft_labs(a);
-	b = ft_labs(b);
-	long c = (long)a - (-b);
-	printf("a = %i\n", a);
-	printf("b = %i\n", b);
-	printf("c = %ld\n", c);
+	int		fd;
+	char	*line;
+
+	fd = open("test.c", O_RDONLY);
+	while ((line = get_next_line(fd)) != NULL)
+	{
+		ft_printf_fd(1, "-> %s", line);
+		free(line);
+	}
 }

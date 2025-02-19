@@ -12,7 +12,7 @@
 
 #include "lists_single.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_s_lstadd_front(t_list **lst, t_list *new)
 {
 	t_list	*tmp_node;
 

@@ -11,10 +11,11 @@
 /* ************************************************************************** */
 
 #include "lists_single.h"
+#include <stdlib.h>
 
 static void	free_recursive(t_list *lst, void (*del)(void *));
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_s_lstclear(t_list **lst, void (*del)(void *))
 {
 	free_recursive(*lst, del);
 	*lst = NULL;
@@ -25,7 +26,7 @@ static void	free_recursive(t_list *lst, void (*del)(void *))
 	if (lst != NULL)
 	{
 		free_recursive(lst->next, del);
-		ft_lstdelone(lst, del);
+		ft_s_lstdelone(lst, del);
 	}
 }
 

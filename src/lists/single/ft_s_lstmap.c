@@ -11,10 +11,11 @@
 /* ************************************************************************** */
 
 #include "lists_single.h"
+#include <stdlib.h>
 
 static void	*my_ft_lstclear(t_list **p_res, void (*del)(void *));
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_s_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*res;
 	t_list	*tmp;
@@ -29,14 +30,14 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			res_f = NULL;
 		if (res_f == NULL)
 			return (my_ft_lstclear(&res, del));
-		tmp = ft_lstnew(res_f);
+		tmp = ft_s_lstnew(res_f);
 		if (tmp == NULL)
 		{
 			del(res_f);
-			ft_lstclear(&res, del);
+			ft_s_lstclear(&res, del);
 			return (res);
 		}
-		ft_lstadd_back(&res, tmp);
+		ft_s_lstadd_back(&res, tmp);
 		lst = lst->next;
 	}
 	return (res);
@@ -44,7 +45,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 static void	*my_ft_lstclear(t_list **p_res, void (*del)(void *))
 {
-	ft_lstclear(p_res, del);
+	ft_s_lstclear(p_res, del);
 	return (NULL);
 }
 

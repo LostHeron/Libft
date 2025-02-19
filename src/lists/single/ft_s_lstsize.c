@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include "lists_single.h"
+#include <stdlib.h>
 
-int	ft_lstsize(t_list *lst)
+int	ft_s_lstsize(t_list *lst)
 {
 	int	i;
 

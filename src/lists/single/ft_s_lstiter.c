@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include "lists_single.h"
+#include <stdlib.h>
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_s_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst != NULL)
 	{

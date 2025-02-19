@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include "lists_single.h"
+#include <stdlib.h>
 
-t_list	*ft_lstlast(t_list *lst)
+t_list	*ft_s_lstlast(t_list *lst)
 {
 	if (lst != NULL)
 	{

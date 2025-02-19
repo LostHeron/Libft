@@ -7,3 +7,4 @@ libftTester/
 *.d
 *.json
 .cache/
+malloc_protection_checker/

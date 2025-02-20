@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include "io.h"
 #include "string.h"
 #include <stdlib.h>
 #include <unistd.h>

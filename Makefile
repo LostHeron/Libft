@@ -46,6 +46,7 @@ LIST_DC_FILES := ft_dc_node_new.c \
 
 STRING_DIR := src/string/
 STRING_FILES := ft_strlen.c \
+				ft_strcpy.c \
 				ft_strlcpy.c \
                 ft_strlcat.c \
 				ft_strchr.c \

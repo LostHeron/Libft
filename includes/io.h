@@ -21,6 +21,12 @@ int		ft_putendl_fd(char *s, int fd);
 int		ft_putnbr_base_u_fd(unsigned int nbr, char *base, int fd);
 int		ft_putnbr_base_ull_fd(unsigned long long nbr, char *base, int fd);
 int		ft_printf_fd(int fd, const char *s, ...);
-char	*get_next_line(int fd);
+/*
+ * values of *err_code :
+ *	- '0'	: correct behaviour
+ *	- '-1'	: read error
+ *	- '-3'	: malloc error
+*/
+char	*get_next_line(int fd, int *err_code);
 
 #endif

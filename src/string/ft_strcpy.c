@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 14:08:29 by jweber            #+#    #+#             */
-/*   Updated: 2025/02/17 11:54:06 by jweber           ###   ########.fr       */
+/*   Created: 2025/02/20 10:50:16 by jweber            #+#    #+#             */
+/*   Updated: 2025/02/20 10:52:27 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h>
-#include <stdlib.h>
-#include "io.h"
-
-int	main(void)
+char	*ft_strcpy(char *dest, char *src)
 {
-	int		fd;
-	char	*line;
-	int		err_code;
+	int	i;
 
-	fd = open("test.c", O_RDONLY);
-	while ((line = get_next_line(fd, &err_code)) != NULL)
+	i = 0;
+	while (src[i])
 	{
-		ft_printf_fd(1, "-> %s", line);
-		free(line);
+		dest[i] = src[i];
+		i++;
 	}
-	ft_printf_fd(1, "-> %s", line);
-	ft_printf_fd(1, "err_code = %i\n", err_code);
+	dest[i] = src[i];
+	return (dest);
 }

@@ -6,14 +6,14 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 12:38:40 by jweber            #+#    #+#             */
-/*   Updated: 2024/12/16 12:48:08 by jweber           ###   ########.fr       */
+/*   Updated: 2025/02/20 11:46:11 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stdlib.h>
 
-void	*new_node(t_list **plst, char *str, int len, t_data_list *ptr_data)
+int	new_node(t_list **plst, char *str, int len, t_data_list *ptr_data)
 {
 	t_list	*new;
 
@@ -21,7 +21,7 @@ void	*new_node(t_list **plst, char *str, int len, t_data_list *ptr_data)
 	if (new == NULL)
 	{
 		free(str);
-		return (NULL);
+		return (MALLOC_FAIL);
 	}
 	if (*plst == NULL)
 	{
@@ -35,7 +35,7 @@ void	*new_node(t_list **plst, char *str, int len, t_data_list *ptr_data)
 		ptr_data->tot_len += len;
 		ptr_data->last = new;
 	}
-	return (new);
+	return (0);
 }
 
 void	change_buff(char *buff, int index)
@@ -69,7 +69,7 @@ void	buff_clear(char *buff)
 	return ;
 }
 
-void	*lst_clear(t_list **plst)
+void	lst_clear(t_list **plst)
 {
 	t_list	*tmp1;
 	t_list	*tmp2;
@@ -84,5 +84,4 @@ void	*lst_clear(t_list **plst)
 		free(tmp1);
 	}
 	*plst = NULL;
-	return (NULL);
 }

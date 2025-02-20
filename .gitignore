@@ -8,3 +8,4 @@ libftTester/
 *.json
 .cache/
 malloc_protection_checker/
+script_fail_malloc.sh

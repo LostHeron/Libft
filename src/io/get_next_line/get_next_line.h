@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 10:16:48 by jweber            #+#    #+#             */
-/*   Updated: 2024/12/16 16:46:13 by jweber           ###   ########.fr       */
+/*   Updated: 2025/02/20 11:06:48 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1024
+#  define BUFFER_SIZE 1
 # endif
 # if BUFFER_SIZE <= 0
 #  error BUFFER_SIZE must be greater than 0
 # endif
+
+# define MALLOC_FAIL -3
+# define READ_FAIL -1
 
 # include "lists_single.h"
 
@@ -29,14 +32,14 @@ typedef struct s_data_list
 	t_list	*last;
 }	t_data_list;
 
-char	*get_next_line(int fd);
-void	*while_read(int fd, t_list **plst, char *buff, t_data_list *ptr_data);
+int		case_empty_buff(int fd, t_list **plst,
+			char *buff, t_data_list *ptr_data);
 void	buff_clear(char *buff);
-void	*lst_clear(t_list **plst);
-void	*add_node_change_buff(t_list **plst, char *buff, t_data_list *ptr_data);
-void	*new_node(t_list **plst, char *str, int len, t_data_list *ptr_data);
+void	lst_clear(t_list **plst);
+int		add_node_change_buff(t_list **plst, char *buff, t_data_list *ptr_data);
+int		new_node(t_list **plst, char *str, int len, t_data_list *ptr_data);
 void	change_buff(char *buff, int index);
-void	*get_string(t_list **plst, t_data_list *ptr_data);
-char	*buff_not_empty(int fd, t_list **plst, char *buf, t_data_list *ptrdata);
+void	*get_string(t_list **plst, t_data_list *ptr_data, int *p_err_code);
+int		buff_not_empty(int fd, t_list **plst, char *buf, t_data_list *ptr_data);
 
 #endif

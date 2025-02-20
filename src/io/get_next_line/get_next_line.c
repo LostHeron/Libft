@@ -6,15 +6,17 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 10:16:23 by jweber            #+#    #+#             */
-/*   Updated: 2024/12/16 16:46:07 by jweber           ###   ########.fr       */
+/*   Updated: 2025/02/20 11:16:10 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "io.h"
+#include "string.h"
 #include <stdlib.h>
 #include <unistd.h>
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, int *p_err_code)
 {
 	static char	buff[BUFFER_SIZE + 1];
 	t_list		*lst;
@@ -24,22 +26,27 @@ char	*get_next_line(int fd)
 	data.last = NULL;
 	data.tot_len = 0;
 	data.check_eol = 0;
+	*p_err_code = 0;
 	i = 0;
 	lst = NULL;
 	while (buff[i] && buff[i] != '\n')
 		i++;
-	if (buff[i] == '\n')
-	{
-		i++;
+	if (buff[i++] == '\n')
 		data.check_eol = 1;
-	}
 	if (i == 0)
-		return (while_read(fd, &lst, buff, &data));
+	{
+		*p_err_code = case_empty_buff(fd, &lst, buff, &data);
+		return (get_string(&lst, &data, p_err_code));
+	}
 	else
-		return (buff_not_empty(fd, &lst, buff, &data));
+	{
+		*p_err_code = buff_not_empty(fd, &lst, buff, &data);
+		return (get_string(&lst, &data, p_err_code));
+	}
 }
 
-void	*while_read(int fd, t_list **plst, char *buff, t_data_list *ptr_data)
+int	case_empty_buff(int fd, t_list **plst,
+			char *buff, t_data_list *ptr_data)
 {
 	int			nb_read;
 
@@ -50,59 +57,70 @@ void	*while_read(int fd, t_list **plst, char *buff, t_data_list *ptr_data)
 		if (nb_read < 0)
 		{
 			buff_clear(buff);
-			return (lst_clear(plst));
+			lst_clear(plst);
+			return (READ_FAIL);
 		}
-		if (add_node_change_buff(plst, buff, ptr_data) == NULL)
-			return (lst_clear(plst));
+		if (add_node_change_buff(plst, buff, ptr_data) < 0)
+		{
+			lst_clear(plst);
+			return (MALLOC_FAIL);
+		}
 	}
-	return (get_string(plst, ptr_data));
+	return (0);
 }
 
-char	*buff_not_empty(int fd, t_list **plst, char *buf, t_data_list *ptr_data)
+int	buff_not_empty(int fd, t_list **plst, char *buf, t_data_list *ptr_data)
 {
 	if (ptr_data->check_eol == 1)
 	{
-		if (add_node_change_buff(plst, buf, ptr_data) == NULL)
-			return (lst_clear(plst));
-		return (get_string(plst, ptr_data));
+		if (add_node_change_buff(plst, buf, ptr_data) < 0)
+		{
+			lst_clear(plst);
+			return (MALLOC_FAIL);
+		}
+		return (0);
 	}
 	else
 	{
-		if (add_node_change_buff(plst, buf, ptr_data) == NULL)
-			return (lst_clear(plst));
-		return (while_read(fd, plst, buf, ptr_data));
+		if (add_node_change_buff(plst, buf, ptr_data) < 0)
+		{
+			lst_clear(plst);
+			return (MALLOC_FAIL);
+		}
+		return (case_empty_buff(fd, plst, buf, ptr_data));
 	}
 }
 
-void	*get_string(t_list **plst, t_data_list *ptr_data)
+void	*get_string(t_list **plst, t_data_list *ptr_data, int *p_err_code)
 {
 	char	*str;
 	t_list	*tmp;
 	int		i;
-	int		j;
+	int		len_tmp;
 
+	if (*plst == NULL)
+		return (NULL);
 	str = malloc((ptr_data->tot_len + 1) * sizeof(char));
 	if (str == NULL)
-		return (lst_clear(plst));
+	{
+		lst_clear(plst);
+		*p_err_code = MALLOC_FAIL;
+		return (NULL);
+	}
 	i = 0;
 	tmp = *plst;
 	while (tmp != NULL)
 	{
-		j = 0;
-		while (((char *)tmp->content)[j])
-		{
-			str[i] = ((char *)tmp->content)[j];
-			j++;
-			i++;
-		}
+		len_tmp = ft_strlen((char *)tmp->content);
+		ft_strcpy(str + i, (char *)tmp->content);
+		i += len_tmp;
 		tmp = tmp->next;
 	}
-	str[i] = '\0';
 	lst_clear(plst);
 	return (str);
 }
 
-void	*add_node_change_buff(t_list **plst, char *buff, t_data_list *ptr_data)
+int	add_node_change_buff(t_list **plst, char *buff, t_data_list *ptr_data)
 {
 	int		i;
 	int		j;
@@ -117,18 +135,18 @@ void	*add_node_change_buff(t_list **plst, char *buff, t_data_list *ptr_data)
 		i++;
 	}
 	if (i == 0)
-		return (*plst);
+		return (0);
 	str = malloc((i + 1) * sizeof(char));
 	if (str == NULL)
-		return (NULL);
+		return (MALLOC_FAIL);
 	j = -1;
 	while (++j < i)
 		str[j] = buff[j];
 	str[j] = '\0';
-	if (new_node(plst, str, i, ptr_data) == NULL)
-		return (NULL);
+	if (new_node(plst, str, i, ptr_data) < 0)
+		return (MALLOC_FAIL);
 	change_buff(buff, i);
-	return (str);
+	return (0);
 }
 
 /*

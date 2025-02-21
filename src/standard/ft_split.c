@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 13:25:18 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:50:51 by jweber           ###   ########.fr       */
+/*   Updated: 2025/02/21 13:20:03 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int	fill_res_i(const char *s, int i, int len_word, char **res_i)
 {
 	int	k;
 
-	*res_i = malloc((len_word + 1) * sizeof(char));
+	*res_i = ft_malloc((len_word + 1) * sizeof(char));
 	if (*res_i == NULL)
 		return (1);
 	k = 0;

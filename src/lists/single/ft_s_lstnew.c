@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_s_lstnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 16:06:15 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:55:28 by jweber           ###   ########.fr       */
+/*   Updated: 2025/02/21 13:24:44 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lists_single.h"
+#include "standard.h"
 #include <stdlib.h>
 
 t_list	*ft_s_lstnew(void *content)
 {
 	t_list	*new_node;
 
-	new_node = malloc(sizeof(t_list));
+	new_node = ft_malloc(sizeof(t_list));
 	if (new_node == NULL)
 		return (NULL);
 	new_node->content = content;

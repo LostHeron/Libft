@@ -67,6 +67,7 @@ STANDARD_FILES := ft_atoi.c \
 				  ft_countwords.c \
 				  ft_split.c \
 				  ft_itoa.c \
+				  ft_malloc.c \
 
 IO_DIR := src/io/
 IO_FILES := ft_putchar_fd.c \

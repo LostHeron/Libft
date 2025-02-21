@@ -6,11 +6,12 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 10:16:23 by jweber            #+#    #+#             */
-/*   Updated: 2025/02/20 11:16:10 by jweber           ###   ########.fr       */
+/*   Updated: 2025/02/21 13:24:22 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "standard.h"
 #include "string.h"
 #include <stdlib.h>
 #include <unistd.h>
@@ -99,7 +100,7 @@ void	*get_string(t_list **plst, t_data_list *ptr_data, int *p_err_code)
 
 	if (*plst == NULL)
 		return (NULL);
-	str = malloc((ptr_data->tot_len + 1) * sizeof(char));
+	str = ft_malloc((ptr_data->tot_len + 1) * sizeof(char));
 	if (str == NULL)
 	{
 		lst_clear(plst);
@@ -135,7 +136,7 @@ int	add_node_change_buff(t_list **plst, char *buff, t_data_list *ptr_data)
 	}
 	if (i == 0)
 		return (0);
-	str = malloc((i + 1) * sizeof(char));
+	str = ft_malloc((i + 1) * sizeof(char));
 	if (str == NULL)
 		return (MALLOC_FAIL);
 	j = -1;

@@ -6,11 +6,12 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 09:35:15 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:51:11 by jweber           ###   ########.fr       */
+/*   Updated: 2025/02/21 13:23:45 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "string.h"
+#include "standard.h"
 
 char	*ft_strdup(const char *s)
 {
@@ -19,7 +20,7 @@ char	*ft_strdup(const char *s)
 	char	*s_c;
 
 	l_s = ft_strlen(s);
-	s_c = malloc((l_s + 1) * sizeof(char));
+	s_c = ft_malloc((l_s + 1) * sizeof(char));
 	if (s_c == NULL)
 		return (NULL);
 	i = 0;

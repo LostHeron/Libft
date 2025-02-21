@@ -6,11 +6,12 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:24:10 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:55:08 by jweber           ###   ########.fr       */
+/*   Updated: 2025/02/21 13:23:15 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "string.h"
+#include "standard.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -21,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	res = malloc((s1_len + s2_len + 1) * sizeof(char));
+	res = ft_malloc((s1_len + s2_len + 1) * sizeof(char));
 	if (res == NULL)
 		return (NULL);
 	i = -1;

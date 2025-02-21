@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:40:18 by jweber            #+#    #+#             */
-/*   Updated: 2025/02/04 13:51:36 by jweber           ###   ########.fr       */
+/*   Updated: 2025/02/21 13:20:33 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	nb_char_r = nb_right(s1, set, s1_len);
 	if (s1_len - nb_char_r - nb_char_l <= 0)
 		return (ft_calloc(1, sizeof(char)));
-	res = malloc((s1_len - nb_char_r - nb_char_l + 1) * sizeof(char));
+	res = ft_malloc((s1_len - nb_char_r - nb_char_l + 1) * sizeof(char));
 	if (res == NULL)
 		return (NULL);
 	i = 0;

@@ -16,7 +16,7 @@
 int	ft_dc_stack_add_back(t_stack *stack, t_node *node)
 {
 	t_node	*old_last;
-	t_node	*old_first;
+	t_node	*first;
 
 	if (node == NULL)
 		return (1);
@@ -30,14 +30,13 @@ int	ft_dc_stack_add_back(t_stack *stack, t_node *node)
 	}
 	else
 	{
-		old_first = stack->head;
+		first = stack->head;
 		old_last = stack->head->prev;
 		stack->size++;
-		old_first->prev = node;
-		node->next = old_first;
+		first->prev = node;
+		node->next = first;
 		node->prev = old_last;
 		old_last->next = node;
-		stack->head = node;
 		return (0);
 	}
 }

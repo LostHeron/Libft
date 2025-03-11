@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   standard.h                                         :+:      :+:    :+:   */
+/*   ft_memory.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 16:40:03 by jweber            #+#    #+#             */
-/*   Updated: 2025/02/21 13:18:51 by jweber           ###   ########.fr       */
+/*   Created: 2025/01/30 16:34:35 by jweber            #+#    #+#             */
+/*   Updated: 2025/03/11 17:39:17 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STANDARD_H
-# define STANDARD_H
+#ifndef MEMORY_H
+# define MEMORY_H
 
 # include <stdlib.h>
 
-int		ft_atoi(const char *nptr);
-void	*ft_calloc(size_t nmemb, size_t size);
-int		ft_countwords(char const *s, char *charset);
-char	**ft_split(char const *s, char *charset);
-char	*ft_itoa(int n);
-void	*ft_malloc(unsigned long size);
+void	*ft_memset(void *s, int c, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	ft_bzero(void *s, size_t n);
 
 #endif

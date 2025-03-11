@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char.h                                             :+:      :+:    :+:   */
+/*   ft_standard.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 16:38:31 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:39:12 by jweber           ###   ########.fr       */
+/*   Created: 2025/01/30 16:40:03 by jweber            #+#    #+#             */
+/*   Updated: 2025/03/11 17:39:17 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHAR_H
-# define CHAR_H
+#ifndef STANDARD_H
+# define STANDARD_H
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
+# include <stdlib.h>
+
+int		ft_atoi(const char *nptr);
+void	*ft_calloc(size_t nmemb, size_t size);
+int		ft_countwords(char const *s, char *charset);
+char	**ft_split(char const *s, char *charset);
+char	*ft_itoa(int n);
+void	*ft_malloc(unsigned long size);
 
 #endif

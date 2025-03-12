@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "io.h"
+#include "ft_io.h"
 #include <limits.h>
 
 static int	ft_putnbr_fd_recu(int n, int fd, int *i);

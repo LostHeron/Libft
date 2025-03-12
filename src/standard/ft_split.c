@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "standard.h"
-#include "string.h"
+#include "ft_standard.h"
+#include "ft_string.h"
 
 static int	fill_res_i(const char *s, int i, int len_word, char **res_i);
 static void	*free_all(char **args);

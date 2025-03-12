@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "standard.h"
-#include "memory.h"
+#include "ft_standard.h"
+#include "ft_memory.h"
 #include <stdint.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)

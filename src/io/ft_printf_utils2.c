@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "io.h"
+#include "ft_io.h"
 #include <stdarg.h>
 
 int	print_percent(va_list *ptr, int *count, int fd)

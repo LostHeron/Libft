@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "standard.h"
+#include "ft_standard.h"
 
 static int	ft_get_size(int n);
 static char	*ft_itoa_pos(int n);

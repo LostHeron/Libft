@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "memory.h"
+#include "ft_memory.h"
 
 void	ft_bzero(void *s, size_t n)
 {

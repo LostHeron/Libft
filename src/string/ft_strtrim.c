@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "string.h"
-#include "standard.h"
+#include "ft_string.h"
+#include "ft_standard.h"
 
 static int	in_charset(char c, char const *set);
 static int	nb_left(char const *s1, char const *set);

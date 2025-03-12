@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "string.h"
-#include "standard.h"
+#include "ft_string.h"
+#include "ft_standard.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

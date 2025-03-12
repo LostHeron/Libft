@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lists_single.h"
+#include "ft_lists_single.h"
 #include <stdlib.h>
 
 int	ft_s_lstsize(t_list *lst)

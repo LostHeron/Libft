@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lists_double_circular.h"
-#include "standard.h"
+#include "ft_lists_double_circular.h"
+#include "ft_standard.h"
 #include <stdlib.h>
 
 t_node	*ft_dc_node_new(void *content)

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lists_single.h"
-#include "standard.h"
+#include "ft_lists_single.h"
+#include "ft_standard.h"
 #include <stdlib.h>
 
 t_list	*ft_s_lstnew(void *content)

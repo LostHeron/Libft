@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lists_single.h"
+#include "ft_lists_single.h"
 #include <stdlib.h>
 
 t_list	*ft_s_lstlast(t_list *lst)

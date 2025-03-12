@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "io.h"
-#include "string.h"
+#include "ft_io.h"
+#include "ft_string.h"
 
 static int	check_base(char *base);
 static int	intermediate(unsigned long long nbr, char *base, int *i, int fd);

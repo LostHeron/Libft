@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include "standard.h"
-#include "string.h"
+#include "ft_standard.h"
+#include "ft_string.h"
 #include <stdlib.h>
 #include <unistd.h>
 

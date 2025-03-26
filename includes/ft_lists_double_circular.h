@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LISTS_DOUBLE_CIRCULAR_H
-# define LISTS_DOUBLE_CIRCULAR_H
+#ifndef FT_LISTS_DOUBLE_CIRCULAR_H
+# define FT_LISTS_DOUBLE_CIRCULAR_H
 
 typedef struct s_node
 {

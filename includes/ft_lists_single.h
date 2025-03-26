@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LISTS_SINGLE_H
-# define LISTS_SINGLE_H
+#ifndef FT_LISTS_SINGLE_H
+# define FT_LISTS_SINGLE_H
 
 typedef struct s_list
 {

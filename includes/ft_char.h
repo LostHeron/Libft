@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHAR_H
-# define CHAR_H
+#ifndef FT_CHAR_H
+# define FT_CHAR_H
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

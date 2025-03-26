@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STANDARD_H
-# define STANDARD_H
+#ifndef FT_STANDARD_H
+# define FT_STANDARD_H
 
 # include <stdlib.h>
 

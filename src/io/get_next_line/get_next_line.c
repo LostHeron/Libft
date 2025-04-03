@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 10:16:23 by jweber            #+#    #+#             */
-/*   Updated: 2025/02/21 13:24:22 by jweber           ###   ########.fr       */
+/*   Updated: 2025/04/03 12:01:03 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,12 @@ int	case_empty_buff(int fd, t_list **plst,
 		{
 			buff_clear(buff);
 			lst_clear(plst);
-			return (READ_FAIL);
+			return (ERROR_READ);
 		}
 		if (add_node_change_buff(plst, buff, ptr_data) < 0)
 		{
 			lst_clear(plst);
-			return (MALLOC_FAIL);
+			return (ERROR_MALLOC);
 		}
 	}
 	return (0);
@@ -76,7 +76,7 @@ int	buff_not_empty(int fd, t_list **plst, char *buf, t_data_list *ptr_data)
 		if (add_node_change_buff(plst, buf, ptr_data) < 0)
 		{
 			lst_clear(plst);
-			return (MALLOC_FAIL);
+			return (ERROR_MALLOC);
 		}
 		return (0);
 	}
@@ -85,7 +85,7 @@ int	buff_not_empty(int fd, t_list **plst, char *buf, t_data_list *ptr_data)
 		if (add_node_change_buff(plst, buf, ptr_data) < 0)
 		{
 			lst_clear(plst);
-			return (MALLOC_FAIL);
+			return (ERROR_MALLOC);
 		}
 		return (case_empty_buff(fd, plst, buf, ptr_data));
 	}
@@ -104,7 +104,7 @@ void	*get_string(t_list **plst, t_data_list *ptr_data, int *p_err_code)
 	if (str == NULL)
 	{
 		lst_clear(plst);
-		*p_err_code = MALLOC_FAIL;
+		*p_err_code = ERROR_MALLOC;
 		return (NULL);
 	}
 	i = 0;
@@ -138,13 +138,13 @@ int	add_node_change_buff(t_list **plst, char *buff, t_data_list *ptr_data)
 		return (0);
 	str = ft_malloc((i + 1) * sizeof(char));
 	if (str == NULL)
-		return (MALLOC_FAIL);
+		return (ERROR_MALLOC);
 	j = -1;
 	while (++j < i)
 		str[j] = buff[j];
 	str[j] = '\0';
 	if (new_node(plst, str, i, ptr_data) < 0)
-		return (MALLOC_FAIL);
+		return (ERROR_MALLOC);
 	change_buff(buff, i);
 	return (0);
 }

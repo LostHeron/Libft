@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 10:16:48 by jweber            #+#    #+#             */
-/*   Updated: 2025/02/20 11:06:48 by jweber           ###   ########.fr       */
+/*   Updated: 2025/04/03 12:00:12 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,12 @@
 #  error BUFFER_SIZE must be greater than 0
 # endif
 
-# define MALLOC_FAIL -3
-# define READ_FAIL -1
+# ifndef ERROR_MALLOC
+#  define ERROR_MALLOC -3
+# endif
+# ifndef ERROR_READ
+#  define ERROR_READ -1
+# endif
 
 # include "ft_lists_single.h"
 

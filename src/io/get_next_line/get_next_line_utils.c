@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 12:38:40 by jweber            #+#    #+#             */
-/*   Updated: 2025/02/20 11:46:11 by jweber           ###   ########.fr       */
+/*   Updated: 2025/04/03 12:00:18 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	new_node(t_list **plst, char *str, int len, t_data_list *ptr_data)
 	if (new == NULL)
 	{
 		free(str);
-		return (MALLOC_FAIL);
+		return (ERROR_MALLOC);
 	}
 	if (*plst == NULL)
 	{

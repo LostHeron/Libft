@@ -85,6 +85,12 @@ GNL_DIR := src/io/get_next_line/
 GNL_FILES := get_next_line.c \
 			 get_next_line_utils.c \
 
+VECTOR_DIR := src/vectors/
+VECTOR_FILES := ft_vector_init.c \
+				ft_vector_add_single.c \
+				ft_vector_resize.c \
+				ft_vector_free.c \
+
 C_FILES := $(addprefix $(CHAR_DIR), $(CHAR_FILES)) \
 		   $(addprefix $(MATH_DIR), $(MATH_FILES)) \
 		   $(addprefix $(MEMORY_DIR), $(MEMORY_FILES)) \
@@ -94,6 +100,7 @@ C_FILES := $(addprefix $(CHAR_DIR), $(CHAR_FILES)) \
 		   $(addprefix $(STANDARD_DIR), $(STANDARD_FILES)) \
 		   $(addprefix $(IO_DIR), $(IO_FILES)) \
 		   $(addprefix $(GNL_DIR), $(GNL_FILES)) \
+		   $(addprefix $(VECTOR_DIR), $(VECTOR_FILES)) \
 
 OBJ_DIR := .obj/
 OBJ_FILES := $(addprefix $(OBJ_DIR), $(C_FILES:.c=.o))
@@ -109,7 +116,7 @@ $(NAME): $(OBJ_FILES)
 
 -include $(DEPENDANCY_FILES)
 
-$(OBJ_DIR)%.o: %.c | $(OBJ_DIR)$(CHAR_DIR) $(OBJ_DIR)$(MATH_DIR) $(OBJ_DIR)$(MEMORY_DIR) $(OBJ_DIR)$(LIST_DC_DIR) $(OBJ_DIR)$(LIST_SINGLE_DIR) $(OBJ_DIR)$(STRING_DIR) $(OBJ_DIR)$(STANDARD_DIR) $(OBJ_DIR)$(IO_DIR) $(OBJ_DIR)$(GNL_DIR)
+$(OBJ_DIR)%.o: %.c | $(OBJ_DIR)$(CHAR_DIR) $(OBJ_DIR)$(MATH_DIR) $(OBJ_DIR)$(MEMORY_DIR) $(OBJ_DIR)$(LIST_DC_DIR) $(OBJ_DIR)$(LIST_SINGLE_DIR) $(OBJ_DIR)$(STRING_DIR) $(OBJ_DIR)$(STANDARD_DIR) $(OBJ_DIR)$(IO_DIR) $(OBJ_DIR)$(GNL_DIR) $(OBJ_DIR)$(VECTOR_DIR)
 	$(CC) -c $(CFLAGS) -MMD -MP -I $(INCLUDES) $< -o $@
 
 $(OBJ_DIR)$(MATH_DIR):
@@ -137,6 +144,9 @@ $(OBJ_DIR)$(IO_DIR):
 	mkdir -p $@
 
 $(OBJ_DIR)$(GNL_DIR):
+	mkdir -p $@
+
+$(OBJ_DIR)$(VECTOR_DIR):
 	mkdir -p $@
 
 clean:

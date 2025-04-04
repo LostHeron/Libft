@@ -16,8 +16,6 @@
 int	ft_vector_init(t_vector *ptr_vector,
 					size_t capacity, size_t data_size, void (*del)())
 {
-	if (ptr_vector == NULL)
-		return (1);
 	ptr_vector->data = ft_malloc(data_size * capacity);
 	if (ptr_vector->data == NULL)
 		return (ERROR_MALLOC);

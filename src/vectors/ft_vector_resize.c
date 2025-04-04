@@ -19,14 +19,14 @@ int	ft_vector_resize(t_vector *ptr_vec, size_t new_capacity)
 {
 	void	*new_data;
 
-	printf("on vient resize !\n");
-	if (ptr_vec == NULL)
-		return (FAILURE);
 	new_data = ft_malloc(ptr_vec->data_size * new_capacity);
 	if (new_data == NULL)
 		return (ERROR_MALLOC);
-	ft_memcpy(new_data, ptr_vec->data, ptr_vec->data_size * ptr_vec->size);
-	free(ptr_vec->data);
+	if (ptr_vec->data != NULL)
+	{
+		ft_memcpy(new_data, ptr_vec->data, ptr_vec->data_size * ptr_vec->size);
+		free(ptr_vec->data);
+	}
 	ptr_vec->data = new_data;
 	ptr_vec->capacity = new_capacity;
 	return (SUCCESS);

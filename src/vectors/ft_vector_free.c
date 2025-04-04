@@ -14,6 +14,7 @@
 
 int	ft_vector_free(t_vector *ptr_vector)
 {
-	ptr_vector->del(ptr_vector);
+	if (ptr_vector->del != NULL)
+		ptr_vector->del(ptr_vector);
 	return (SUCCESS);
 }

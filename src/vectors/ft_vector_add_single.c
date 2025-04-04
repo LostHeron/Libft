@@ -13,21 +13,19 @@
 #include "ft_vectors.h"
 #include "ft_memory.h"
 
-int	ft_vector_add_single(t_vector *ptr_vector, void *elem)
+int	ft_vector_add_single(t_vector *ptr_vec, void *elem)
 {
 	int	ret;
 
-	if (ptr_vector == NULL)
-		return (FAILURE);
-	if (ptr_vector->size == ptr_vector->capacity)
+	if (ptr_vec->size == ptr_vec->capacity)
 	{
-		ret = ft_vector_resize(ptr_vector, ptr_vector->capacity << 1);
+		ret = ft_vector_resize(ptr_vec, ptr_vec->capacity << 1);
 		if (ret != 0)
 			return (ret);
 	}
-	ft_memcpy(ptr_vector->data + ptr_vector->data_size * ptr_vector->size,
+	ft_memcpy(ptr_vec->data + ptr_vec->data_size * ptr_vec->size,
 		elem,
-		ptr_vector->data_size);
-	ptr_vector->size++;
+		ptr_vec->data_size);
+	ptr_vec->size++;
 	return (SUCCESS);
 }

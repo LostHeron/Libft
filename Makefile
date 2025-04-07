@@ -1,4 +1,5 @@
 NAME := libft.a
+NAME_DEBUG := libft_debug.a
 CC := cc
 CFLAGS := -Wall -Wextra -Werror
 INCLUDES := includes/

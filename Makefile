@@ -91,6 +91,7 @@ VECTOR_FILES := ft_vector_init.c \
 				ft_vector_add_single.c \
 				ft_vector_resize.c \
 				ft_vector_free.c \
+				ft_vector_copy.c \
 
 C_FILES := $(addprefix $(CHAR_DIR), $(CHAR_FILES)) \
 		   $(addprefix $(MATH_DIR), $(MATH_FILES)) \

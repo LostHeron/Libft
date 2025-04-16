@@ -14,6 +14,37 @@
 
 void	ft_bzero(void *s, size_t n)
 {
+	size_t				i;
+	size_t				incr;
+	unsigned long long	*s_c;
+	size_t				nb_tot;
+	size_t				nb_zeroed;
+
+	s_c = (unsigned long long *) s;
+	i = 0;
+	nb_zeroed = 0;
+	if (n >= 8)
+	{
+		nb_tot = n - 8;
+		incr = sizeof(unsigned long long);
+		while (nb_zeroed < nb_tot)
+		{
+			*(s_c + i) = 0;
+			i++;
+			nb_zeroed += incr;
+		}
+	}
+	while (nb_zeroed < n)
+	{
+		*(((char *)s_c) + nb_zeroed) = 0;
+		nb_zeroed += 1;
+	}
+}
+
+/*
+my_first bzero function :
+void	ft_bzero(void *s, size_t n)
+{
 	size_t	i;
 	char	*s_t;
 
@@ -25,7 +56,7 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 	return ;
-}
+*/
 
 /*
 #include <stdio.h>

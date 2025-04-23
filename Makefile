@@ -17,6 +17,8 @@ MATH_DIR = src/math/
 MATH_FILES = ft_power.c \
 			 ft_abs.c \
 			 ft_labs.c \
+			 ft_cos.c \
+			 ft_cos_adaptive.c \
 
 MEMORY_DIR := src/memory/
 MEMORY_FILES := ft_memset.c \

@@ -6,15 +6,22 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 09:29:33 by jweber            #+#    #+#             */
-/*   Updated: 2025/03/11 17:39:17 by jweber           ###   ########.fr       */
+/*   Updated: 2025/04/23 15:18:41 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MATH_H
 # define FT_MATH_H
 
-int		ft_power(int nb, int power);
+# include <stdlib.h>
+
+# define PI 3.14159265358979323846
+
+int		ft_power_int(int nb, int power);
+double	ft_power(double nb, size_t power);
 int		ft_abs(int nb);
 long	ft_labs(long nb);
+double	ft_cos(double theta);
+double	ft_cos_adaptive(double theta, int nb_terms);
 
 #endif

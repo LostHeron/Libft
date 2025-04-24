@@ -14,7 +14,9 @@ CHAR_FILES := ft_isalpha.c \
               ft_tolower.c \
 
 MATH_DIR = src/math/
-MATH_FILES = ft_power.c \
+MATH_FILES = ft_max.c \
+			 ft_min.c \
+			 ft_power.c \
 			 ft_abs.c \
 			 ft_labs.c \
 			 ft_cos.c \
@@ -22,6 +24,9 @@ MATH_FILES = ft_power.c \
 			 ft_cos_iterative.c \
 			 ft_sin.c \
 			 ft_tan.c \
+			 ft_sqrt.c \
+			 ft_sqrt_binary.c \
+			 ft_sqrt_newton.c \
 
 MEMORY_DIR := src/memory/
 MEMORY_FILES := ft_memset.c \

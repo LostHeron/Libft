@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 18:02:28 by jweber            #+#    #+#             */
-/*   Updated: 2025/04/23 15:26:07 by jweber           ###   ########.fr       */
+/*   Updated: 2025/04/23 19:12:14 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,77 +105,5 @@ double	ft_cos_powered_up_blog(double x)
 	((xx * xx * xx * xx * xx * xx * xx * xx) / (20922789888000)) - \
 	((xx * xx * xx * xx * xx * xx * xx * xx * xx) / (6402373705728000)) + \
 	((xx * xx * xx * xx * xx * xx * xx * xx * xx * xx) / (2432902008176640000)));
-}
-*/
-
-/*
- *
- * first try of an ft_cos, is ok, but i can not get under 1e-13 precision 
- * from the 'cos' function from the math.h lib
- *
-double	ft_cos(double theta)
-{
-	double	step = 0.005;
-	double	cos_theta;
-	double	sin_theta;
-	double	tmp_cos;
-	double	tmp_sin;
-	double	current_theta;
-	size_t	count;
-
-	cos_theta = 1;
-	sin_theta = 0;
-	current_theta = 0;
-	theta = theta - (int)(theta / (2 * PI)) * 2 * PI;
-	count = 0;
-	while (current_theta + 2 * step < theta)
-	{
-		current_theta += step;
-		//tmp_cos = cos_theta - sin_theta * (step) - \
-		// cos_theta / 2 * ft_power(step, 2)\
-		//	+ sin_theta / 6 * ft_power(step, 3) + \
-		//	cos_theta / 24 * ft_power(step, 4)\
-		//	- sin_theta / 120 * ft_power(step, 5) - \
-		//	cos_theta / 720 * ft_power(step, 6)\
-		//	+ sin_theta / 5040 * ft_power(step, 7);
-		//tmp_sin = sin_theta + cos_theta * (step) - \
-		//	sin_theta / 2 * ft_power(step, 2) - \
-		//	cos_theta / 6 * ft_power(step, 3) + \
-		//	sin_theta / 24 * ft_power(step, 4)\
-		//	+ cos_theta / 120 * ft_power(step, 5) - \
-		//	sin_theta / 720 * ft_power(step, 6)\
-		//	- cos_theta / 5040 * ft_power(step, 7);
-		tmp_cos = cos_theta - sin_theta * (step) - cos_theta / 2 * step * step \
-			+ sin_theta / 6 * step * step * step + \
-			cos_theta / 24 * step * step * step * step \
-			- sin_theta / 120 * step * step * step * step * step - \
-			cos_theta / 720 * step * step * step * step * step * step \
-			+ sin_theta / 5040 * step * step * step * step * step * step * step ;
-		tmp_sin = sin_theta + cos_theta * (step) - sin_theta / 2 * step * step\
-			- cos_theta / 6 * step * step * step + \
-			sin_theta / 24 * step * step * step * step \
-			+ cos_theta / 120 * step * step * step * step * step - \
-			sin_theta / 720 * step * step * step * step * step * step\
-			- cos_theta / 5040 * step * step * step * step * step * step * step ;
-		cos_theta = tmp_cos;
-		sin_theta = tmp_sin;
-		count++;
-	}
-	step = theta - current_theta;
-	tmp_cos = cos_theta - sin_theta * (step) - cos_theta / 2 * step * step\
-		+ sin_theta / 6 * step * step * step + \
-		cos_theta / 24 * step * step * step * step \
-		- sin_theta / 120 * step * step * step * step * step - \
-		cos_theta / 720 * step * step * step * step * step * step \
-		+ sin_theta / 5040 * step * step * step * step * step * step * step ;
-	tmp_sin = sin_theta + cos_theta * (step) - sin_theta / 2 * step * step\
-		- cos_theta / 6 * step * step * step + \
-		sin_theta / 24 * step * step * step * step \
-		+ cos_theta / 120 * step * step * step * step * step - \
-		sin_theta / 720 * step * step * step * step * step * step\
-		- cos_theta / 5040 * step * step * step * step * step * step * step ;
-	cos_theta = tmp_cos;
-	sin_theta = tmp_sin;
-	return (cos_theta);
 }
 */

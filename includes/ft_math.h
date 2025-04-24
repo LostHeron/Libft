@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 09:29:33 by jweber            #+#    #+#             */
-/*   Updated: 2025/04/23 16:18:04 by jweber           ###   ########.fr       */
+/*   Updated: 2025/04/23 19:12:23 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		ft_abs(int nb);
 long	ft_labs(long nb);
 double	ft_cos(double theta);
 double	ft_cos_adaptive(double theta, int nb_terms);
+double	ft_cos_iterative(double theta);
 double	ft_sin(double theta);
 double	ft_tan(double theta);
 

@@ -44,7 +44,7 @@ static double	get_value(double ts, double fact, double nb_terms)
 	res = 1;
 	while (i < nb_terms - 1)
 	{
-		fact = fact * (2 * (i) + 1) * (2 * (i) + 2);
+		fact = fact * (2 * i + 1) * (2 * i + 2);
 		n_term *= ts;
 		if (i % 2 == 0)
 			res = res - n_term / fact;

@@ -80,6 +80,7 @@ STANDARD_FILES := ft_atoi.c \
                   ft_calloc.c \
 				  ft_countwords.c \
 				  ft_split.c \
+				  ft_split_free.c \
 				  ft_itoa.c \
 				  ft_malloc.c \
 

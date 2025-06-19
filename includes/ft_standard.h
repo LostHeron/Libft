@@ -19,7 +19,7 @@ int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_countwords(char const *s, char *charset);
 char	**ft_split(char const *s, char *charset);
-char	*free_split(char **str);
+char	*ft_split_free(char **str);
 char	*ft_itoa(int n);
 void	*ft_malloc(unsigned long size);
 

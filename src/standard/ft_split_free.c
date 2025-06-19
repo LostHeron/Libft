@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-char	*free_split(char **str)
+char	*ft_split_free(char **str)
 {
 	size_t	i;
 

@@ -46,6 +46,8 @@ LIST_SINGLE_FILES := ft_s_lstnew.c \
 			  		 ft_s_lstclear.c \
 			  		 ft_s_lstiter.c \
 			  		 ft_s_lstmap.c \
+					 ft_s_lstrem_head.c \
+					 ft_s_lstrem_last.c \
 
 LIST_DC_DIR := src/lists/double_circular/
 LIST_DC_FILES := ft_dc_node_new.c \

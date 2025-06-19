@@ -28,5 +28,7 @@ void	ft_s_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_s_lstclear(t_list **lst, void (*del)(void *));
 void	ft_s_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_s_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void	ft_s_lstrem_head(t_list **p_lst, void (*del)(void *));
+void	ft_s_lstrem_last(t_list **p_lst, void (*del)(void *));
 
 #endif

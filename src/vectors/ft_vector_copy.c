@@ -12,12 +12,12 @@
 
 #include "ft_vectors.h"
 
-int	ft_vector_copy(t_vector *dest, t_vector *src)
+void	ft_vector_copy(t_vector *dest, t_vector *src)
 {
 	dest->data = src->data;
 	dest->size = src->size;
 	dest->capacity = src->capacity;
 	dest->data_size = src->data_size;
 	dest->del = src->del;
-	return (0);
+	return ;
 }

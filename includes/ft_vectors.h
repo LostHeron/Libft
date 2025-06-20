@@ -36,11 +36,11 @@ typedef struct s_vector
 	void	(*del)(struct s_vector *ptr_vector);
 }			t_vector;
 
-int	ft_vector_add_single(t_vector *ptr_vector, void *elem);
-int	ft_vector_free(t_vector *ptr_vector);
-int	ft_vector_init(t_vector *ptr_vector,
-		size_t capacity, size_t data_size, void (*del)());
-int	ft_vector_resize(t_vector *ptr_vec, size_t new_capacity);
-int	ft_vector_copy(t_vector *dest, t_vector *src);
+int		ft_vector_add_single(t_vector *ptr_vector, void *elem);
+int		ft_vector_free(t_vector *ptr_vector);
+int		ft_vector_init(t_vector *ptr_vector,
+			size_t capacity, size_t data_size, void (*del)());
+int		ft_vector_resize(t_vector *ptr_vec, size_t new_capacity);
+void	ft_vector_copy(t_vector *dest, t_vector *src);
 
 #endif

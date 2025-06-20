@@ -71,6 +71,8 @@ STRING_FILES := ft_strlen.c \
 				ft_strndup.c \
 				ft_substr.c \
 				ft_strjoin.c \
+				ft_strjoin_free_first.c \
+				ft_strjoin_free_second.c \
 				ft_strtrim.c \
 				ft_strmapi.c \
 				ft_striteri.c \

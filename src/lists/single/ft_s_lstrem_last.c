@@ -21,8 +21,7 @@ void	ft_s_lstrem_last(t_list **p_lst, void (*del)(void *))
 		return ;
 	else if ((*p_lst)->next == NULL)
 	{
-		if (del != NULL)
-			del(*p_lst);
+		ft_s_lstdelone(*p_lst, del);
 		*p_lst = NULL;
 		return ;
 	}
@@ -31,10 +30,7 @@ void	ft_s_lstrem_last(t_list **p_lst, void (*del)(void *))
 		tmp = *p_lst;
 		while (tmp->next->next != NULL)
 			tmp = tmp->next;
-		if (del != NULL)
-		{
-			del(tmp->next);
-		}
+		ft_s_lstdelone(tmp->next, del);
 		tmp->next = NULL;
 		return ;
 	}

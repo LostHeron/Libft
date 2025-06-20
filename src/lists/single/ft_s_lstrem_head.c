@@ -21,6 +21,5 @@ void	ft_s_lstrem_head(t_list **p_lst, void (*del)(void *))
 		return ;
 	tmp = *p_lst;
 	*p_lst = (*p_lst)->next;
-	if (del != NULL)
-		del(tmp);
+	ft_s_lstdelone(tmp, del);
 }

@@ -107,6 +107,7 @@ GNL_FILES := get_next_line.c \
 VECTOR_DIR := src/vectors/
 VECTOR_FILES := ft_vector_init.c \
 				ft_vector_add_single.c \
+				ft_vector_add_multi.c \
 				ft_vector_resize.c \
 				ft_vector_free.c \
 				ft_vector_copy.c \

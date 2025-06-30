@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 11:49:03 by jweber            #+#    #+#             */
-/*   Updated: 2025/04/03 14:08:54 by jweber           ###   ########.fr       */
+/*   Updated: 2025/06/30 13:59:06 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_vector
 }			t_vector;
 
 int		ft_vector_add_single(t_vector *ptr_vector, void *elem);
+int		ft_vector_add_multi(t_vector *ptr_vec, void *elem, size_t nb_elem);
 int		ft_vector_free(t_vector *ptr_vector);
 int		ft_vector_init(t_vector *ptr_vector,
 			size_t capacity, size_t data_size, void (*del)());

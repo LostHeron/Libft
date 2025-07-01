@@ -24,6 +24,7 @@ char	*ft_strjoin_free_second(char const *s1, char const *s2)
 	if (s1 == NULL && s2 == NULL)
 	{
 		res = ft_malloc(1 * sizeof(char));
+		res[0] = '\0';
 		return (res);
 	}
 	else if (s1 == NULL)

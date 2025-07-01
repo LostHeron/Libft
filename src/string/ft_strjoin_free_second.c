@@ -17,7 +17,7 @@ static char	*case_none_null(char const *s1, char const *s2);
 static char	*case_first_null(char const *s2);
 static char	*case_second_null(char const *s1);
 
-char	*ft_strjoin_free_first(char const *s1, char const *s2)
+char	*ft_strjoin_free_second(char const *s1, char const *s2)
 {
 	char	*res;
 

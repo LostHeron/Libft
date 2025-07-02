@@ -16,6 +16,7 @@
 static char	*case_none_null(char const *s1, char const *s2);
 static char	*case_first_null(char const *s2);
 static char	*case_second_null(char const *s1);
+static char	*my_free(char const *s);
 
 char	*ft_strjoin_free_first(char const *s1, char const *s2)
 {
@@ -24,7 +25,10 @@ char	*ft_strjoin_free_first(char const *s1, char const *s2)
 	if (s1 == NULL && s2 == NULL)
 	{
 		res = ft_malloc(1 * sizeof(char));
-		res[0] = '\0';
+		if (res != NULL)
+		{
+			res[0] = '\0';
+		}
 		return (res);
 	}
 	else if (s1 == NULL)
@@ -70,7 +74,10 @@ static char	*case_second_null(char const *s1)
 	s1_len = ft_strlen(s1);
 	res = ft_malloc((s1_len + 1) * sizeof(char));
 	if (res == NULL)
+	{
+		free((void *)s1);
 		return (NULL);
+	}
 	i = 0;
 	while (i < s1_len)
 	{
@@ -93,7 +100,7 @@ static char	*case_none_null(char const *s1, char const *s2)
 	s2_len = ft_strlen(s2);
 	res = ft_malloc((s1_len + s2_len + 1) * sizeof(char));
 	if (res == NULL)
-		return (NULL);
+		return (my_free(s1));
 	i = 0;
 	while (i < s1_len)
 	{
@@ -108,4 +115,10 @@ static char	*case_none_null(char const *s1, char const *s2)
 	res[i] = '\0';
 	free((void *)s1);
 	return (res);
+}
+
+static char	*my_free(char const *s)
+{
+	free((void *)s);
+	return (NULL);
 }

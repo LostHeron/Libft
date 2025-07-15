@@ -69,6 +69,7 @@ STRING_FILES := ft_strlen.c \
 				ft_strcmp.c \
 				ft_strncmp.c \
 				ft_strnstr.c \
+				ft_strstr.c \
 				ft_strdup.c \
 				ft_strndup.c \
 				ft_substr.c \

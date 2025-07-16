@@ -29,7 +29,7 @@ double	ft_sqrt_newton(double val)
 	}
 	else if (val < 0)
 	{
-		return ((double) 0 / 0);
+		return (ft_get_nan());
 	}
 	nb_digits = get_nb_digits(val);
 	start_x = val / ft_power(10, nb_digits / 2);

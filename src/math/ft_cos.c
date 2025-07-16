@@ -35,23 +35,23 @@ double	ft_cos(double theta)
 static double	get_value(double theta_square)
 {
 	return (1 - theta_square / 2 \
-	+ theta_square * theta_square / 24 \
-	- theta_square * theta_square * theta_square / 720 \
-	+ theta_square * theta_square * theta_square * theta_square / 40320 \
-	- theta_square * theta_square * theta_square * theta_square * \
-	theta_square / 3628800 \
-	+ theta_square * theta_square * theta_square * theta_square * \
-	theta_square * theta_square / 479001600 \
-	- theta_square * theta_square * theta_square * theta_square * \
-	theta_square * theta_square * theta_square / 87178291200 \
-	+ theta_square * theta_square * theta_square * theta_square * \
-	theta_square * theta_square * theta_square * theta_square / 20922789888000 \
-	- theta_square * theta_square * theta_square * theta_square * \
-	theta_square * theta_square * theta_square * theta_square * \
-	theta_square / 6402373705728001 \
-	+ theta_square * theta_square * theta_square * theta_square * \
-	theta_square * theta_square * theta_square * theta_square * \
-	theta_square * theta_square / 2432902008176640000);
++ theta_square * theta_square / 24 \
+- theta_square * theta_square * theta_square / 720 \
++ theta_square * theta_square * theta_square * theta_square / 40320 \
+- theta_square * theta_square * theta_square * theta_square * \
+theta_square / 3628800 \
++ theta_square * theta_square * theta_square * theta_square * \
+theta_square * theta_square / 479001600 \
+- theta_square * theta_square * theta_square * theta_square * \
+theta_square * theta_square * theta_square / 87178291200 \
++ theta_square * theta_square * theta_square * theta_square * \
+theta_square * theta_square * theta_square * theta_square / 20922789888000 \
+- theta_square * theta_square * theta_square * theta_square * \
+theta_square * theta_square * theta_square * theta_square * \
+theta_square / 6402373705728001 \
++ theta_square * theta_square * theta_square * theta_square * \
+theta_square * theta_square * theta_square * theta_square * \
+theta_square * theta_square / 2432902008176640000);
 }
 
 /*
@@ -96,14 +96,14 @@ double	ft_cos_powered_up_blog(double x)
     }
     double xx = x * x;
 
-    return sign * (1 - ((xx) / (2)) + \
-	((xx * xx) / (24)) - ((xx * xx * xx) / (720)) + \
-	((xx * xx * xx * xx) / (40320)) - \
-	((xx * xx * xx * xx * xx) / (3628800)) + \
-	((xx * xx * xx * xx * xx * xx) / (479001600)) - \
-	((xx * xx * xx * xx * xx * xx * xx) / (87178291200)) + \
-	((xx * xx * xx * xx * xx * xx * xx * xx) / (20922789888000)) - \
-	((xx * xx * xx * xx * xx * xx * xx * xx * xx) / (6402373705728000)) + \
-	((xx * xx * xx * xx * xx * xx * xx * xx * xx * xx) / (2432902008176640000)));
+return sign * (1 - ((xx) / (2)) + 
+	((xx * xx) / (24)) - ((xx * xx * xx) / (720)) + 
+	((xx * xx * xx * xx) / (40320)) - 
+	((xx * xx * xx * xx * xx) / (3628800)) + 
+	((xx * xx * xx * xx * xx * xx) / (479001600)) - 
+	((xx * xx * xx * xx * xx * xx * xx) / (87178291200)) + 
+	((xx * xx * xx * xx * xx * xx * xx * xx) / (20922789888000)) - 
+	((xx * xx * xx * xx * xx * xx * xx * xx * xx) / (6402373705728000)) + 
+((xx * xx * xx * xx * xx * xx * xx * xx * xx * xx) / (2432902008176640000)));
 }
 */

@@ -22,6 +22,10 @@ MATH_FILES = ft_max.c \
 			 ft_cos.c \
 			 ft_cos_adaptive.c \
 			 ft_cos_iterative.c \
+			 ft_get_nan.c \
+			 ft_get_nanf.c \
+			 ft_get_inf.c \
+			 ft_get_inff.c \
 			 ft_sin.c \
 			 ft_tan.c \
 			 ft_sqrt.c \

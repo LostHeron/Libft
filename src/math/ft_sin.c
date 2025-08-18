@@ -35,19 +35,19 @@ static double	get_value(double theta)
 
 	theta_square = theta * theta;
 	return (theta - theta * theta_square / 6 \
-+ theta * theta_square * theta_square / 120 \
-- theta * theta_square * theta_square * theta_square / 5040 \
-+ theta * theta_square * theta_square * theta_square * \
+	+ theta * theta_square * theta_square / 120 \
+	- theta * theta_square * theta_square * theta_square / 5040 \
+	+ theta * theta_square * theta_square * theta_square * \
 theta_square / 362880 \
-- theta * theta_square * theta_square * theta_square * theta_square * \
+	- theta * theta_square * theta_square * theta_square * theta_square * \
 theta_square / 39916800 \
-+ theta * theta_square * theta_square * theta_square * theta_square * \
+	+ theta * theta_square * theta_square * theta_square * theta_square * \
 theta_square * theta_square / 6227020800 \
-- theta * theta_square * theta_square * theta_square * theta_square * \
+	- theta * theta_square * theta_square * theta_square * theta_square * \
 theta_square * theta_square * theta_square / 1307674368000 \
-+ theta * theta_square * theta_square * theta_square * theta_square * \
+	+ theta * theta_square * theta_square * theta_square * theta_square * \
 theta_square * theta_square * theta_square * theta_square / 355687428096000 \
-- theta * theta_square * theta_square * theta_square * theta_square * \
+	- theta * theta_square * theta_square * theta_square * theta_square * \
 theta_square * theta_square * theta_square * theta_square * \
 theta_square / 121645100408832000);
 }

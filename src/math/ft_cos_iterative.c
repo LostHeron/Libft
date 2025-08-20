@@ -68,30 +68,30 @@ static double	get_cos(double theta, double step)
 
 static double	get_next_cos(double cos_theta, double sin_theta, double step)
 {
-	return (cos_theta \
-	- sin_theta * (step) \
-	- cos_theta / 2 * ft_power(step, 2) \
-	+ sin_theta / 6 * ft_power(step, 3) \
-	+ cos_theta / 24 * ft_power(step, 4) \
-	- sin_theta / 120 * ft_power(step, 5) \
-	- cos_theta / 720 * ft_power(step, 6) \
-	+ sin_theta / 5040 * ft_power(step, 7) \
-	+ cos_theta / 40320 * ft_power(step, 8) \
-	- sin_theta / 362880 * ft_power(step, 9) \
-	- cos_theta / 3628800 * ft_power(step, 10));
+	return (cos_theta
+		- sin_theta * (step)
+		- cos_theta / 2 * ft_power(step, 2)
+		+ sin_theta / 6 * ft_power(step, 3)
+		+ cos_theta / 24 * ft_power(step, 4)
+		- sin_theta / 120 * ft_power(step, 5)
+		- cos_theta / 720 * ft_power(step, 6)
+		+ sin_theta / 5040 * ft_power(step, 7)
+		+ cos_theta / 40320 * ft_power(step, 8)
+		- sin_theta / 362880 * ft_power(step, 9)
+		- cos_theta / 3628800 * ft_power(step, 10));
 }
 
 static double	get_next_sin(double cos_theta, double sin_theta, double step)
 {
-	return (sin_theta \
-	+ cos_theta * (step) \
-	- sin_theta / 2 * ft_power(step, 2) \
-	- cos_theta / 6 * ft_power(step, 3) \
-	+ sin_theta / 24 * ft_power(step, 4) \
-	+ cos_theta / 120 * ft_power(step, 5) \
-	- sin_theta / 720 * ft_power(step, 6) \
-	- cos_theta / 5040 * ft_power(step, 7) \
-	+ sin_theta / 40320 * ft_power(step, 8) \
-	+ cos_theta / 362880 * ft_power(step, 9) \
-	- cos_theta / 3628800 * ft_power(step, 10));
+	return (sin_theta
+		+ cos_theta * (step)
+		- sin_theta / 2 * ft_power(step, 2)
+		- cos_theta / 6 * ft_power(step, 3)
+		+ sin_theta / 24 * ft_power(step, 4)
+		+ cos_theta / 120 * ft_power(step, 5)
+		- sin_theta / 720 * ft_power(step, 6)
+		- cos_theta / 5040 * ft_power(step, 7)
+		+ sin_theta / 40320 * ft_power(step, 8)
+		+ cos_theta / 362880 * ft_power(step, 9)
+		- cos_theta / 3628800 * ft_power(step, 10));
 }

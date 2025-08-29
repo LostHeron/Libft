@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_char.h                                          :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 16:38:31 by jweber            #+#    #+#             */
-/*   Updated: 2025/08/29 12:04:22 by jweber           ###   ########.fr       */
+/*   Created: 2025/08/29 11:47:55 by jweber            #+#    #+#             */
+/*   Updated: 2025/08/29 12:11:39 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CHAR_H
-# define FT_CHAR_H
-
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-int		ft_isspace(char c);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-
+#ifndef WHITE_SPACE
+# define WHITE_SPACE " \f\n\r\t\v"
 #endif
+#include "ft_string.h"
+
+/* checks for white-space characters.  In the "C" and "POSIX" locales, 
+ * these are: 
+ * - space (' '), 
+ * - form-feed ('\f'), 
+ * - newline ('\n'), 
+ * - carriage return ('\r'), 
+ * - horizontal tab ('\t'),  
+ * - vertical tab ('\v').
+*/
+int	ft_isspace(char c)
+{
+	return (ft_strchr(WHITE_SPACE, c) != NULL);
+}

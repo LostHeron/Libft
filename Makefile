@@ -87,6 +87,7 @@ STRING_FILES := ft_strlen.c \
 
 STANDARD_DIR := src/standard/
 STANDARD_FILES := ft_atoi.c \
+				  ft_atoi_safe.c \
                   ft_calloc.c \
 				  ft_countwords.c \
 				  ft_split.c \

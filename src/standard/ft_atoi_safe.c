@@ -12,8 +12,11 @@
 
 #include "ft_char.h"
 #include "ft_standard.h"
+#include <limits.h>
 
 static int	process_before_digits(const char *str, int *p_i, int *p_sign);
+static int	ft_atoi_safe_positive(const char *str, int *p_value, int i);
+static int	ft_atoi_safe_negative(const char *str, int *p_value, int i);
 
 #define STRLEN_MAX 4096
 
@@ -31,9 +34,9 @@ int	ft_atoi_safe(const char *str, int *p_value)
 	if (ret != 0)
 		return (ret);
 	if (sign >= 0)
-		return (ft_atoi_safe_positive());
+		return (ft_atoi_safe_positive(str, p_value, i));
 	else
-		return (ft_atoi_safe_negative());
+		return (ft_atoi_safe_negative(str, p_value, i));
 }
 
 static int	process_before_digits(const char *str, int *p_i, int *p_sign)
@@ -59,23 +62,46 @@ static int	process_before_digits(const char *str, int *p_i, int *p_sign)
 	return (0);
 }
 
-int	ft_atoi_safe_positive(const char *str, int *p_value, int i, int sign)
+static int	ft_atoi_safe_positive(const char *str, int *p_value, int i)
 {
 	*p_value = 0;
 	while (i < STRLEN_MAX && '0' <= str[i] && str[i] <= '9')
 	{
-		// two operation to perform here : 
-		// multiplication of *p_value by 10, 
-		// then addition of *p_value with str[i] + '0'
-		// before each operation we need to check no overflow happens !
-		// so here to the logic is :
-		// INT_MAX / 10 > *p_value -> overflow 
-		*p_value = *p_value * 10 + str[i] - '0';
+		if (INT_MAX / 10 < *p_value)
+			return (ATOI_SAFE_OVERFLOW);
+		else
+			*p_value *= 10;
+		if (INT_MAX - (str[i] - '0') < *p_value)
+			return (ATOI_SAFE_OVERFLOW);
+		else
+			*p_value += (str[i] - '0');
 		i++;
 	}
 	if (i >= STRLEN_MAX)
 		return (ATOI_SAFE_TOO_LARGE_INPUT);
-	if (str[i] == '\0')
+	if (str[i] != '\0')
+		return (ATOI_SAFE_WRONG_INPUT);
+	return (0);
+}
+
+static int	ft_atoi_safe_negative(const char *str, int *p_value, int i)
+{
+	*p_value = 0;
+	while (i < STRLEN_MAX && '0' <= str[i] && str[i] <= '9')
+	{
+		if (INT_MIN / 10 > *p_value)
+			return (ATOI_SAFE_OVERFLOW);
+		else
+			*p_value *= 10;
+		if (INT_MIN + (str[i] - '0') > *p_value)
+			return (ATOI_SAFE_OVERFLOW);
+		else
+			*p_value -= (str[i] - '0');
+		i++;
+	}
+	if (i >= STRLEN_MAX)
+		return (ATOI_SAFE_TOO_LARGE_INPUT);
+	if (str[i] != '\0')
 		return (ATOI_SAFE_WRONG_INPUT);
 	return (0);
 }

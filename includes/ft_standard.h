@@ -15,10 +15,13 @@
 
 # include <stdlib.h>
 
-# define ATOI_SAFE_OVERFLOW 1
-# define ATOI_SAFE_UNDERFLOW 2
-# define ATOI_SAFE_WRONG_INPUT 3
-# define ATOI_SAFE_TOO_LARGE_INPUT 4
+enum	e_atoi_safe
+{
+	ATOI_SAFE_OVERFLOW = 1,
+	ATOI_SAFE_UNDERFLOW,
+	ATOI_SAFE_WRONG_INPUT,
+	ATOI_SAFE_TOO_LARGE_INPUT,
+};
 
 int		ft_atoi_safe(const char *str, int *p_value);
 

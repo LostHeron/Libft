@@ -90,11 +90,11 @@ static int	ft_atoi_safe_negative(const char *str, int *p_value, int i)
 	while (i < STRLEN_MAX && '0' <= str[i] && str[i] <= '9')
 	{
 		if (INT_MIN / 10 > *p_value)
-			return (ATOI_SAFE_OVERFLOW);
+			return (ATOI_SAFE_UNDERFLOW);
 		else
 			*p_value *= 10;
 		if (INT_MIN + (str[i] - '0') > *p_value)
-			return (ATOI_SAFE_OVERFLOW);
+			return (ATOI_SAFE_UNDERFLOW);
 		else
 			*p_value -= (str[i] - '0');
 		i++;

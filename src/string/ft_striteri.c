@@ -6,18 +6,20 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 12:31:38 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/22 12:47:14 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 17:00:59 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_string.h"
+
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])
 	{
-		f(i, s + i);
+		f((unsigned int)i, s + i);
 		i++;
 	}
 	return ;

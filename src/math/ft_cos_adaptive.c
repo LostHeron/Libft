@@ -12,7 +12,7 @@
 
 #include "ft_math.h"
 
-static double	get_value(double ts, double fact, double nb_terms);
+static double	get_value(double ts, double fact, int nb_terms);
 
 double	ft_cos_adaptive(double theta, int nb_terms)
 {
@@ -33,7 +33,7 @@ double	ft_cos_adaptive(double theta, int nb_terms)
 		return (res * -1);
 }
 
-static double	get_value(double ts, double fact, double nb_terms)
+static double	get_value(double ts, double fact, int nb_terms)
 {
 	size_t	i;
 	double	n_term;
@@ -42,9 +42,9 @@ static double	get_value(double ts, double fact, double nb_terms)
 	i = 0;
 	n_term = 1;
 	res = 1;
-	while (i < nb_terms - 1)
+	while (i < (size_t) nb_terms - 1)
 	{
-		fact = fact * (2 * i + 1) * (2 * i + 2);
+		fact = fact * (2 * (double) i + 1) * (2 * (double) i + 2);
 		n_term *= ts;
 		if (i % 2 == 0)
 			res = res - n_term / fact;

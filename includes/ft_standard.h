@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 16:40:03 by jweber            #+#    #+#             */
-/*   Updated: 2025/08/29 13:47:53 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 17:03:19 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_atoi_safe(const char *str, int *p_value);
 
 int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
-int		ft_countwords(char const *s, char *charset);
+size_t	ft_countwords(char const *s, char *charset);
 char	**ft_split(char const *s, char *charset);
 char	*ft_split_free(char **str);
 char	*ft_itoa(int n);

@@ -6,16 +6,17 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 13:30:05 by jweber            #+#    #+#             */
-/*   Updated: 2024/11/21 14:08:12 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 17:02:52 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
+#include "ft_standard.h"
 
-int	ft_countwords(char const *s, char *charset)
+size_t ft_countwords(char const *s, char *charset)
 {
-	int	i;
-	int	nb_words;
+	size_t	i;
+	size_t	nb_words;
 
 	i = 0;
 	nb_words = 0;

@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_math.h"
+
 double	ft_min(double val1, double val2)
 {
 	if (val1 <= val2)

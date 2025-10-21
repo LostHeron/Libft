@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 14:55:05 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:51:04 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 16:54:55 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strchr(const char *s, int c)
 	char	c_c;
 
 	i = 0;
-	c_c = c;
+	c_c = (char)c;
 	while (s[i])
 	{
 		if (s[i] == c_c)

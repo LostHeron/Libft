@@ -21,7 +21,7 @@ double	ft_sin(double theta)
 	ssize_t	nb_pi_in_theta;
 
 	nb_pi_in_theta = (int)(theta / PI);
-	theta = theta - nb_pi_in_theta * PI;
+	theta = theta - (double) nb_pi_in_theta * PI;
 	res = get_value(theta);
 	if (nb_pi_in_theta % 2 == 0)
 		return (res);

@@ -1,7 +1,13 @@
 NAME := libft.a
 NAME_DEBUG := libft_debug.a
 CC := cc
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS_HARD = -Wall -Wextra -Werror -MMD -MP -ggdb3 -Wshadow -Wconversion -Wsign-conversion -Wmissing-prototypes \
+-Wformat=2 -Wformat-security -Wnull-dereference -Wstack-protector -Wfloat-equal -Wpointer-arith \
+-Wcast-align -Wundef -Wbad-function-cast -Wstrict-overflow=4 -Wdouble-promotion -Walloca -Wvla \
+-Wwrite-strings -Wuninitialized -fno-delete-null-pointer-checks -fno-omit-frame-pointer -std=c11
+
+#CFLAGS := -Wall -Wextra -Werror
+CFLAGS := $(CFLAGS_HARD)
 INCLUDES := includes/
 
 CHAR_DIR := src/char/
@@ -19,6 +25,7 @@ MATH_FILES = ft_max.c \
 			 ft_min.c \
 			 ft_power.c \
 			 ft_abs.c \
+			 ft_abs_double.c \
 			 ft_labs.c \
 			 ft_cos.c \
 			 ft_cos_adaptive.c \

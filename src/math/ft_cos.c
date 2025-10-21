@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_math.h"
+#include <sys/types.h>
 
 static double	get_value(double theta_square);
 
@@ -19,14 +20,14 @@ double	ft_cos(double theta)
 	double	res;
 	double	theta_square;
 	int		sign;
-	size_t	nb_pi_in_theta;
+	ssize_t	nb_pi_in_theta;
 
 	nb_pi_in_theta = (int)(theta / PI);
 	if (nb_pi_in_theta % 2 == 0)
 		sign = 1;
 	else
 		sign = -1;
-	theta = theta - nb_pi_in_theta * PI;
+	theta = theta - (double)nb_pi_in_theta * PI;
 	theta_square = theta * theta;
 	res = get_value(theta_square);
 	return (res * sign);

@@ -6,21 +6,22 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 13:22:29 by jweber            #+#    #+#             */
-/*   Updated: 2025/02/04 13:49:15 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 17:24:33 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_io.h"
 #include <stdarg.h>
-#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 
-int	print_c(va_list *ptr, int *count, int fd)
+ssize_t	print_c(va_list *ptr, int *count, int fd)
 {
-	int	c;
-	int	val;
+	int		c;
+	ssize_t	val;
 
 	c = va_arg(*ptr, int);
-	val = ft_putchar_fd(c, fd);
+	val = ft_putchar_fd((char)c, fd);
 	if (val < 0)
 		return (-1);
 	else
@@ -30,10 +31,10 @@ int	print_c(va_list *ptr, int *count, int fd)
 	}
 }
 
-int	print_i(va_list *ptr, int *count, int fd)
+ssize_t	print_i(va_list *ptr, int *count, int fd)
 {
-	int	c;
-	int	val;
+	int		c;
+	ssize_t	val;
 
 	c = va_arg(*ptr, int);
 	val = ft_putnbr_fd(c, fd);
@@ -46,10 +47,10 @@ int	print_i(va_list *ptr, int *count, int fd)
 	}
 }
 
-int	print_p(va_list *ptr, int *count, int fd)
+ssize_t	print_p(va_list *ptr, int *count, int fd)
 {
 	unsigned long long	a;
-	int					val;
+	ssize_t				val;
 
 	a = (unsigned long long) va_arg(*ptr, void *);
 	if (a == 0)
@@ -73,10 +74,10 @@ int	print_p(va_list *ptr, int *count, int fd)
 	return (val);
 }
 
-int	print_s(va_list *ptr, int *count, int fd)
+ssize_t	print_s(va_list *ptr, int *count, int fd)
 {
 	char	*str;
-	int		val;
+	ssize_t	val;
 
 	str = va_arg(*ptr, char *);
 	if (str == NULL)
@@ -100,13 +101,13 @@ int	print_s(va_list *ptr, int *count, int fd)
 	}
 }
 
-int	print_u(va_list *ptr, int *count, int fd)
+ssize_t	print_u(va_list *ptr, int *count, int fd)
 {
-	int	c;
-	int	val;
+	int		c;
+	ssize_t	val;
 
 	c = va_arg(*ptr, int);
-	val = ft_putunbr_fd(c, fd);
+	val = ft_putunbr_fd((unsigned int)c, fd);
 	if (val < 0)
 		return (-1);
 	else

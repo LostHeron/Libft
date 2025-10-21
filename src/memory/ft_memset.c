@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:31:49 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:49:49 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 16:48:01 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		*(s_c + i) = c;
+		*(s_c + i) = (char)c;
 		i++;
 	}
 	return ((void *) s);

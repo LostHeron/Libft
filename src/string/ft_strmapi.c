@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 09:40:10 by jweber            #+#    #+#             */
-/*   Updated: 2025/02/21 13:22:22 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 17:00:06 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	s_len;
-	int		i;
+	size_t	i;
 	char	*res;
 
 	s_len = ft_strlen(s);
@@ -26,7 +26,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (s[i])
 	{
-		res[i] = f(i, s[i]);
+		res[i] = f((unsigned int)i, s[i]);
 		i++;
 	}
 	res[i] = '\0';

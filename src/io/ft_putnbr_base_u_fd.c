@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base_u.c                                 :+:      :+:    :+:   */
+/*   ft_putnbr_base_u_fd.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:36:02 by jweber            #+#    #+#             */
-/*   Updated: 2024/12/17 11:38:13 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 17:18:46 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_io.h"
 #include "ft_string.h"
+#include <unistd.h>
 
-static int	check_base(char *base);
-static int	intermediate(unsigned int nbr, char *base, int *i, int fd);
+static int		check_base(const char *base);
+static ssize_t	intermediate(unsigned int nbr, const char *base, int *i, int fd);
 
-int	ft_putnbr_base_u_fd(unsigned int nbr, char *base, int fd)
+ssize_t	ft_putnbr_base_u_fd(unsigned int nbr, const char *base, int fd)
 {
-	int	count;
-	int	val;
+	int		count;
+	ssize_t	val;
 
 	count = 0;
 	val = intermediate(nbr, base, &count, fd);
@@ -29,10 +30,10 @@ int	ft_putnbr_base_u_fd(unsigned int nbr, char *base, int fd)
 		return (val);
 }
 
-static int	intermediate(unsigned int nbr, char *base, int *i, int fd)
+static ssize_t	intermediate(unsigned int nbr, const char *base, int *i, int fd)
 {
-	unsigned int	nb_base;
-	int				val;
+	size_t	nb_base;
+	ssize_t	val;
 
 	if (check_base(base))
 		return (-1);
@@ -52,7 +53,7 @@ static int	intermediate(unsigned int nbr, char *base, int *i, int fd)
 		return (*i);
 }
 
-static int	check_base(char *base)
+static int	check_base(const char *base)
 {
 	int	i;
 	int	j;

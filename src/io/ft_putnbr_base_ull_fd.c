@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base_ull.c                               :+:      :+:    :+:   */
+/*   ft_putnbr_base_ull_fd.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 10:48:45 by jweber            #+#    #+#             */
-/*   Updated: 2024/12/05 18:11:24 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 17:18:23 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_io.h"
 #include "ft_string.h"
+#include <unistd.h>
 
-static int	check_base(char *base);
-static int	intermediate(unsigned long long nbr, char *base, int *i, int fd);
+static int	check_base(const char *base);
+static ssize_t	intermediate(unsigned long long nbr,
+				const char *base, int *i, int fd);
 
-int	ft_putnbr_base_ull_fd(unsigned long long nbr, char *base, int fd)
+ssize_t	ft_putnbr_base_ull_fd(unsigned long long nbr, const char *base, int fd)
 {
-	int	count;
-	int	val;
+	int		count;
+	ssize_t val;
 
 	count = 0;
 	val = intermediate(nbr, base, &count, fd);
@@ -29,10 +31,10 @@ int	ft_putnbr_base_ull_fd(unsigned long long nbr, char *base, int fd)
 		return (val);
 }
 
-static int	intermediate(unsigned long long nbr, char *base, int *i, int fd)
+static ssize_t	intermediate(unsigned long long nbr, const char *base, int *i, int fd)
 {
 	unsigned long long	nb_base;
-	int					val;
+	ssize_t				val;
 
 	if (check_base(base))
 		return (-1);
@@ -52,7 +54,7 @@ static int	intermediate(unsigned long long nbr, char *base, int *i, int fd)
 		return (*i);
 }
 
-static int	check_base(char *base)
+static int	check_base(const char *base)
 {
 	int	i;
 	int	j;

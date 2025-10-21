@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_sqrt_newton.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:27:17 by jweber            #+#    #+#             */
-/*   Updated: 2025/04/24 18:11:56 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 16:47:27 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_math.h"
+
+#define EPS 1e-12
 
 static size_t	get_nb_digits(double val);
 
@@ -23,7 +25,7 @@ double	ft_sqrt_newton(double val)
 	size_t	i;
 	size_t	nb_digits;
 
-	if (val == 0)
+	if (ft_abs_double(val - 0) < EPS)
 	{
 		return (0);
 	}

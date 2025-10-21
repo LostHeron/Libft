@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 10:22:19 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:49:42 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 16:49:01 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	add_src = (unsigned long long) src;
 	dest_c = (char *) dest;
 	src_c = (char *) src;
-	i = -1;
+	i = -1LLU;
 	if (add_src < add_dest && add_dest <= add_src + n)
 		while (++i < n)
 			dest_c[n - 1 - i] = src_c[n - 1 - i];

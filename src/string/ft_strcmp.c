@@ -6,9 +6,11 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 11:38:15 by jweber            #+#    #+#             */
-/*   Updated: 2025/02/11 11:39:27 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 16:56:01 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_string.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {

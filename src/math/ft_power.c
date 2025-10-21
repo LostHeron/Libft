@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_math.h"
 #include <stdlib.h>
 
 int	ft_power_int(int nb, int power)

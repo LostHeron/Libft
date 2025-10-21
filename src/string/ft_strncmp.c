@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:22:31 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:51:59 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 16:56:42 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (0);
 	while (s1[i] && s2[i] && i < n - 1)
 	{
-		uc1 = s1[i];
-		uc2 = s2[i];
+		uc1 = (unsigned char)s1[i];
+		uc2 = (unsigned char)s2[i];
 		if (uc1 != uc2)
 			return (uc1 - uc2);
 		i++;
 	}
-	uc1 = s1[i];
-	uc2 = s2[i];
+	uc1 = (unsigned char)s1[i];
+	uc2 = (unsigned char)s2[i];
 	return (uc1 - uc2);
 }
 

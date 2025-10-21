@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:14:27 by jweber            #+#    #+#             */
-/*   Updated: 2025/02/21 13:21:48 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 17:04:48 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static char	*ft_itoa_pos(int n)
 	char	*res;
 
 	size = ft_get_size(n);
-	res = ft_malloc((size + 1) * sizeof(char));
+	res = ft_malloc((unsigned long)(size + 1) * sizeof(char));
 	if (res == NULL)
 		return (NULL);
 	i = 0;
@@ -55,7 +55,7 @@ static char	*ft_itoa_neg(int n)
 	char	*res;
 
 	size = ft_get_size(n) + 1;
-	res = ft_malloc((size + 1) * sizeof(char));
+	res = ft_malloc((unsigned long)(size + 1) * sizeof(char));
 	if (res == NULL)
 		return (NULL);
 	res[0] = '-';

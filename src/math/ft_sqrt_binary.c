@@ -6,11 +6,13 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 17:52:28 by jweber            #+#    #+#             */
-/*   Updated: 2025/04/24 18:20:03 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 16:45:16 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
+
+#define EPS 1e-12
 
 static void	init_high_low(double val, double *low, double *high);
 
@@ -27,7 +29,7 @@ double	ft_sqrt_binary(double val)
 	while (i < 100)
 	{
 		mid = (high + low) / 2;
-		if (mid * mid == val)
+		if (ft_abs_double(mid * mid - val) < EPS)
 			return (mid);
 		else if (mid * mid > val)
 			high = mid;

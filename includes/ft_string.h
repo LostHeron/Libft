@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 16:42:05 by jweber            #+#    #+#             */
-/*   Updated: 2025/09/02 13:59:36 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 17:07:10 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 # define FT_STRING_H
 
 # include <stdlib.h>
+# include <sys/types.h>
 
 size_t	ft_strlen(const char *s);
-char	*ft_strcpy(char *dest, char *src);
+char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strncpy(char *dest, char *src, size_t n);
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_strncat(char *dest, const char *src, size_t n);

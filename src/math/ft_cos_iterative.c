@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_math.h"
+#include <sys/types.h>
 
 static double	get_cos(double theta, double step);
 static double	get_next_sin(double cos_theta, double sin_theta, double step);
@@ -30,7 +31,7 @@ double	ft_cos_iterative(double theta)
 	ssize_t	nb_pi_in_theta;
 
 	nb_pi_in_theta = (int)(theta / PI);
-	theta = theta - nb_pi_in_theta * PI;
+	theta = theta - (double) nb_pi_in_theta * PI;
 	step = 0.05;
 	res = get_cos(theta, step);
 	if (nb_pi_in_theta % 2 == 0)

@@ -22,6 +22,7 @@ double	ft_min(double val1, double val2);
 int		ft_power_int(int nb, int power);
 double	ft_power(double nb, size_t power);
 int		ft_abs(int nb);
+double	ft_abs_double(double nb);
 long	ft_labs(long nb);
 double	ft_cos(double theta);
 double	ft_cos_adaptive(double theta, int nb_terms);

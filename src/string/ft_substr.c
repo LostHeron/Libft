@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:18:28 by jweber            #+#    #+#             */
-/*   Updated: 2025/02/21 13:22:30 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 16:58:17 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		res = ft_malloc((malloc_size + 1) * sizeof(char));
 		if (res == NULL)
 			return (NULL);
-		i = -1;
+		i = -1LLU;
 		while (s[start + ++i] && i < malloc_size)
 			res[i] = s[start + i];
 		res[i] = '\0';

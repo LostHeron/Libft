@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 10:45:57 by jweber            #+#    #+#             */
-/*   Updated: 2025/08/29 13:44:08 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 17:01:26 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(const char *nptr)
 {
 	long	b;
 	long	i;
-	long	sign;
+	int		sign;
 
 	b = 0;
 	i = 0;

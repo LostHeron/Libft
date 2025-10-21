@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 13:15:34 by jweber            #+#    #+#             */
-/*   Updated: 2025/05/15 13:26:04 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 16:58:02 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ char	*ft_strndup(const char *s, ssize_t n)
 	l_s = ft_strlen(s);
 	new_n = (size_t) n;
 	if (l_s < new_n)
-		s_c = ft_malloc((l_s + 1) * sizeof(char));
+		s_c = ft_malloc((unsigned long)(l_s + 1) * sizeof(char));
 	else
-		s_c = ft_malloc((n + 1) * sizeof(char));
+		s_c = ft_malloc((unsigned long)(n + 1) * sizeof(char));
 	if (s_c == NULL)
 		return (NULL);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 15:26:47 by jweber            #+#    #+#             */
-/*   Updated: 2025/01/30 16:52:10 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 16:55:05 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	char	c_c;
 	size_t	i;
 
-	c_c = c;
+	c_c = (char)c;
 	i = ft_strlen(s);
 	while (i != 0)
 	{

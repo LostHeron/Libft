@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 09:01:08 by jweber            #+#    #+#             */
-/*   Updated: 2025/02/04 13:53:01 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/21 17:27:40 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
-#include <stdlib.h>
 #include <unistd.h>
+#include "ft_io.h"
 
 static int	iter(int fd, const char *s,
-				va_list *pptr, int (*f[128])(va_list *, int *, int fd));
-static void	init_function_array(int (*f[128])(va_list *ptr,
+				va_list *pptr, ssize_t (*f[128])(va_list *, int *, int fd));
+static void	init_function_array(ssize_t	(*f[128])(va_list *ptr,
 					int *count, int fd));
-int			print_c(va_list *ptr, int *count, int fd);
-int			print_p(va_list *ptr, int *count, int fd);
-int			print_i(va_list *ptr, int *count, int fd);
-int			print_p(va_list *ptr, int *count, int fd);
-int			print_s(va_list *ptr, int *count, int fd);
-int			print_u(va_list *ptr, int *count, int fd);
-int			print_percent(va_list *ptr, int *count, int fd);
-int			print_x_lower(va_list *ptr, int *count, int fd);
-int			print_x_upper(va_list *ptr, int *count, int fd);
 
 int	ft_printf_fd(int fd, const char *s, ...)
 {
 	va_list		ptr;
-	int			(*f[128])(va_list *ptr, int *count, int fd);
+	ssize_t		(*f[128])(va_list *ptr, int *count, int fd);
 	int			val;
 
 	if (s == NULL)
@@ -53,11 +44,11 @@ int	ft_printf_fd(int fd, const char *s, ...)
 }
 
 static int	iter(int fd, const char *s,
-				va_list *pptr, int (*f[128])(va_list *, int *, int fd))
+				va_list *pptr, ssize_t (*f[128])(va_list *, ssize_t *, int fd))
 {
-	int	i;
-	int	i_prev;
-	int	count;
+	ssize_t	i;
+	ssize_t	i_prev;
+	ssize_t	count;
 
 	i = 0;
 	count = 0;
@@ -80,7 +71,7 @@ static int	iter(int fd, const char *s,
 	return (i + count);
 }
 
-static void	init_function_array(int (*f[128])(va_list *ptr, int *count, int fd))
+static void	init_function_array(ssize_t	(*f[128])(va_list *ptr, int *count, int fd))
 {
 	int	i;
 

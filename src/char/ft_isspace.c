@@ -14,6 +14,7 @@
 # define WHITE_SPACE " \f\n\r\t\v"
 #endif
 #include "ft_string.h"
+#include "ft_char.h"
 
 /* checks for white-space characters.  In the "C" and "POSIX" locales, 
  * these are: 

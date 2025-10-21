@@ -14,10 +14,10 @@
 # define FT_IO_H
 
 int		ft_putchar_fd(char c, int fd);
-int		ft_putstr_fd(char *s, int fd);
+int		ft_putstr_fd(const char *s, int fd);
 int		ft_putnbr_fd(int n, int fd);
 int		ft_putunbr_fd(unsigned int n, int fd);
-int		ft_putendl_fd(char *s, int fd);
+int		ft_putendl_fd(const char *s, int fd);
 int		ft_putnbr_base_u_fd(unsigned int nbr, char *base, int fd);
 int		ft_putnbr_base_ull_fd(unsigned long long nbr, char *base, int fd);
 int		ft_printf_fd(int fd, const char *s, ...);

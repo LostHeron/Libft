@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-ssize_t	print_c(va_list *ptr, int *count, int fd)
+ssize_t	print_c(va_list *ptr, ssize_t *count, int fd)
 {
 	int		c;
 	ssize_t	val;
@@ -31,7 +31,7 @@ ssize_t	print_c(va_list *ptr, int *count, int fd)
 	}
 }
 
-ssize_t	print_i(va_list *ptr, int *count, int fd)
+ssize_t	print_i(va_list *ptr, ssize_t *count, int fd)
 {
 	int		c;
 	ssize_t	val;
@@ -47,7 +47,7 @@ ssize_t	print_i(va_list *ptr, int *count, int fd)
 	}
 }
 
-ssize_t	print_p(va_list *ptr, int *count, int fd)
+ssize_t	print_p(va_list *ptr, ssize_t *count, int fd)
 {
 	unsigned long long	a;
 	ssize_t				val;
@@ -74,7 +74,7 @@ ssize_t	print_p(va_list *ptr, int *count, int fd)
 	return (val);
 }
 
-ssize_t	print_s(va_list *ptr, int *count, int fd)
+ssize_t	print_s(va_list *ptr, ssize_t *count, int fd)
 {
 	char	*str;
 	ssize_t	val;
@@ -101,7 +101,7 @@ ssize_t	print_s(va_list *ptr, int *count, int fd)
 	}
 }
 
-ssize_t	print_u(va_list *ptr, int *count, int fd)
+ssize_t	print_u(va_list *ptr, ssize_t *count, int fd)
 {
 	int		c;
 	ssize_t	val;

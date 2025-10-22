@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_io.h"
 #include "get_next_line.h"
 #include "ft_standard.h"
 #include "ft_string.h"
 #include <stdlib.h>
+#include <sys/types.h>
 #include <unistd.h>
 
 char	*get_next_line(int fd, int *p_err_code)
@@ -48,7 +50,7 @@ char	*get_next_line(int fd, int *p_err_code)
 int	case_empty_buff(int fd, t_list **plst,
 			char *buff, t_data_list *ptr_data)
 {
-	int			nb_read;
+	ssize_t	nb_read;
 
 	nb_read = 1;
 	while (nb_read > 0 && ptr_data->check_eol == 0)
@@ -95,12 +97,12 @@ void	*get_string(t_list **plst, t_data_list *ptr_data, int *p_err_code)
 {
 	char	*str;
 	t_list	*tmp;
-	int		i;
-	int		len_tmp;
+	size_t	i;
+	size_t	len_tmp;
 
 	if (*plst == NULL)
 		return (NULL);
-	str = ft_malloc((ptr_data->tot_len + 1) * sizeof(char));
+	str = ft_malloc((unsigned long)(ptr_data->tot_len + 1) * sizeof(char));
 	if (str == NULL)
 	{
 		lst_clear(plst);
@@ -136,7 +138,7 @@ int	add_node_change_buff(t_list **plst, char *buff, t_data_list *ptr_data)
 	}
 	if (i == 0)
 		return (0);
-	str = ft_malloc((i + 1) * sizeof(char));
+	str = ft_malloc((unsigned long)(i + 1) * sizeof(char));
 	if (str == NULL)
 		return (ERROR_MALLOC);
 	j = -1;

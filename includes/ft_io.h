@@ -23,15 +23,15 @@ int		ft_putunbr_fd(unsigned int n, int fd);
 ssize_t	ft_putendl_fd(const char *s, int fd);
 ssize_t	ft_putnbr_base_u_fd(unsigned int nbr, const char *base, int fd);
 ssize_t	ft_putnbr_base_ull_fd(unsigned long long nbr, const char *base, int fd);
-ssize_t	print_c(va_list *ptr, int *count, int fd);
-ssize_t	print_i(va_list *ptr, int *count, int fd);
-ssize_t	print_p(va_list *ptr, int *count, int fd);
-ssize_t	print_s(va_list *ptr, int *count, int fd);
-ssize_t	print_u(va_list *ptr, int *count, int fd);
-ssize_t	print_percent(va_list *ptr, int *count, int fd);
-ssize_t	print_x_lower(va_list *ptr, int *count, int fd);
-ssize_t	print_x_upper(va_list *ptr, int *count, int fd);
-int		ft_printf_fd(int fd, const char *s, ...);
+ssize_t	print_c(va_list *ptr, ssize_t *count, int fd);
+ssize_t	print_i(va_list *ptr, ssize_t *count, int fd);
+ssize_t	print_p(va_list *ptr, ssize_t *count, int fd);
+ssize_t	print_s(va_list *ptr, ssize_t *count, int fd);
+ssize_t	print_u(va_list *ptr, ssize_t *count, int fd);
+ssize_t	print_percent(va_list *ptr, ssize_t *count, int fd);
+ssize_t	print_x_lower(va_list *ptr, ssize_t *count, int fd);
+ssize_t	print_x_upper(va_list *ptr, ssize_t *count, int fd);
+ssize_t	ft_printf_fd(int fd, const char *s, ...);
 /*
  * values of *err_code :
  *	- '0'	: correct behaviour

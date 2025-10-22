@@ -14,7 +14,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-ssize_t	print_percent(va_list *ptr, int *count, int fd)
+ssize_t	print_percent(va_list *ptr, ssize_t *count, int fd)
 {
 	ssize_t	val;
 
@@ -30,7 +30,7 @@ ssize_t	print_percent(va_list *ptr, int *count, int fd)
 	return (0);
 }
 
-ssize_t	print_x_lower(va_list *ptr, int *count, int fd)
+ssize_t	print_x_lower(va_list *ptr, ssize_t *count, int fd)
 {
 	int		a;
 	ssize_t	val;
@@ -47,7 +47,7 @@ ssize_t	print_x_lower(va_list *ptr, int *count, int fd)
 	}
 }
 
-ssize_t	print_x_upper(va_list *ptr, int *count, int fd)
+ssize_t	print_x_upper(va_list *ptr, ssize_t *count, int fd)
 {
 	int		a;
 	ssize_t	val;

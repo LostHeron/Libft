@@ -14,16 +14,16 @@
 #include <unistd.h>
 #include "ft_io.h"
 
-static int	iter(int fd, const char *s,
-				va_list *pptr, ssize_t (*f[128])(va_list *, int *, int fd));
+static ssize_t	iter(int fd, const char *s,
+				va_list *pptr, ssize_t (*f[128])(va_list *, ssize_t *, int fd));
 static void	init_function_array(ssize_t	(*f[128])(va_list *ptr,
-					int *count, int fd));
+					ssize_t *count, int fd));
 
-int	ft_printf_fd(int fd, const char *s, ...)
+ssize_t	ft_printf_fd(int fd, const char *s, ...)
 {
 	va_list		ptr;
-	ssize_t		(*f[128])(va_list *ptr, int *count, int fd);
-	int			val;
+	ssize_t		(*f[128])(va_list *ptr, ssize_t	*count, int fd);
+	ssize_t		val;
 
 	if (s == NULL)
 		return (-1);
@@ -43,7 +43,7 @@ int	ft_printf_fd(int fd, const char *s, ...)
 	return (val);
 }
 
-static int	iter(int fd, const char *s,
+static ssize_t	iter(int fd, const char *s,
 				va_list *pptr, ssize_t (*f[128])(va_list *, ssize_t *, int fd))
 {
 	ssize_t	i;
@@ -58,7 +58,7 @@ static int	iter(int fd, const char *s,
 		while (s[i] && s[i] != '%')
 			i++;
 		if (!(i == i_prev))
-			write(fd, s + i_prev, i - i_prev);
+			write(fd, s + i_prev, (size_t)(i - i_prev));
 		if (s[i])
 			i++;
 		if (f[(int) s[i]] != NULL)
@@ -71,7 +71,8 @@ static int	iter(int fd, const char *s,
 	return (i + count);
 }
 
-static void	init_function_array(ssize_t	(*f[128])(va_list *ptr, int *count, int fd))
+static void	init_function_array(ssize_t	(*f[128])(va_list *ptr,
+				ssize_t *count, int fd))
 {
 	int	i;
 

@@ -23,7 +23,7 @@ int	ft_vector_add_single(t_vector *ptr_vec, void *elem)
 		if (ret != 0)
 			return (ret);
 	}
-	ft_memcpy(ptr_vec->data + ptr_vec->data_size * ptr_vec->size,
+	ft_memcpy((char *)ptr_vec->data + ptr_vec->data_size * ptr_vec->size,
 		elem,
 		ptr_vec->data_size);
 	ptr_vec->size++;

@@ -23,6 +23,8 @@ enum	e_atoi_safe
 	ATOI_SAFE_TOO_LARGE_INPUT,
 };
 
+int		ft_atoi_safe(const char *str, int *p_value);
+
 enum	e_atof_safe
 {
 	ATOF_SAFE_OVERFLOW = 1,
@@ -31,7 +33,7 @@ enum	e_atof_safe
 	ATOF_SAFE_TOO_LARGE_INPUT,
 };
 
-int		ft_atoi_safe(const char *str, int *p_value);
+int		ft_atof_safe(const char *str, double *ptr_val);
 
 int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);

@@ -23,6 +23,8 @@ CHAR_FILES := ft_isalpha.c \
 MATH_DIR = src/math/
 MATH_FILES = ft_max.c \
 			 ft_min.c \
+			 ft_is_inf_d.c \
+			 ft_is_nan_d.c \
 			 ft_power.c \
 			 ft_abs.c \
 			 ft_abs_double.c \
@@ -96,6 +98,7 @@ STRING_FILES := ft_strlen.c \
 STANDARD_DIR := src/standard/
 STANDARD_FILES := ft_atoi.c \
 				  ft_atoi_safe.c \
+				  ft_atof_safe.c \
                   ft_calloc.c \
 				  ft_countwords.c \
 				  ft_split.c \

@@ -37,8 +37,8 @@ int		ft_atof_safe(const char *str, double *ptr_val);
 
 int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
-size_t	ft_countwords(char const *s, char *charset);
-char	**ft_split(char const *s, char *charset);
+size_t	ft_countwords(char const *s, const char *charset);
+char	**ft_split(char const *s, const char *charset);
 char	*ft_split_free(char **str);
 char	*ft_itoa(int n);
 void	*ft_malloc(unsigned long size);

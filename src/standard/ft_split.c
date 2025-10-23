@@ -16,7 +16,7 @@
 static int	fill_res_i(const char *s, int i, int len_word, char **res_i);
 static void	*free_all(char **args);
 
-char	**ft_split(char const *s, char *charset)
+char	**ft_split(char const *s, const char *charset)
 {
 	int		word_i;
 	int		i;

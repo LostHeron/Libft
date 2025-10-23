@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 09:29:33 by jweber            #+#    #+#             */
-/*   Updated: 2025/04/24 18:08:38 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/23 11:13:20 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ double	ft_get_nan(void);
 float	ft_get_nanf(void);
 double	ft_get_inf(void);
 float	ft_get_inff(void);
+int		ft_is_inf_d(double nb);
+int		ft_is_nan_d(double nb);
 double	ft_sin(double theta);
 double	ft_tan(double theta);
 double	ft_sqrt(double val);

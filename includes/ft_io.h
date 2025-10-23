@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 16:33:14 by jweber            #+#    #+#             */
-/*   Updated: 2025/10/21 17:23:11 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/23 10:52:32 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <sys/types.h>
 #include <stdarg.h>
 
+ssize_t	print_binary(int fd, unsigned long long *a, size_t size_of_var);
 ssize_t	ft_putchar_fd(char c, int fd);
 ssize_t	ft_putstr_fd(const char *s, int fd);
 int		ft_putnbr_fd(int n, int fd);

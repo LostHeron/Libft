@@ -6,7 +6,7 @@
 /*   By: jweber <jweber@student.42Lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 16:40:03 by jweber            #+#    #+#             */
-/*   Updated: 2025/10/21 17:03:19 by jweber           ###   ########.fr       */
+/*   Updated: 2025/10/22 16:23:06 by jweber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ enum	e_atoi_safe
 	ATOI_SAFE_UNDERFLOW,
 	ATOI_SAFE_WRONG_INPUT,
 	ATOI_SAFE_TOO_LARGE_INPUT,
+};
+
+enum	e_atof_safe
+{
+	ATOF_SAFE_OVERFLOW = 1,
+	ATOF_SAFE_UNDERFLOW,
+	ATOF_SAFE_WRONG_INPUT,
+	ATOF_SAFE_TOO_LARGE_INPUT,
 };
 
 int		ft_atoi_safe(const char *str, int *p_value);

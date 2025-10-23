@@ -114,6 +114,7 @@ IO_FILES := ft_putchar_fd.c \
 			ft_printf_utils2.c \
 			ft_printf_utils1.c \
 			ft_printf_fd.c \
+			ft_print_binary_fd.c \
 
 GNL_DIR := src/io/get_next_line/
 GNL_FILES := get_next_line.c \

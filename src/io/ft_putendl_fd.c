@@ -15,8 +15,8 @@
 
 ssize_t	ft_putendl_fd(const char *s, int fd)
 {
-	ssize_t tmp;
-	ssize_t val;
+	ssize_t	tmp;
+	ssize_t	val;
 
 	tmp = ft_putstr_fd(s, fd);
 	if (tmp < 0)

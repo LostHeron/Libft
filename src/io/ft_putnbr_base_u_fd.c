@@ -15,7 +15,8 @@
 #include <unistd.h>
 
 static int		check_base(const char *base);
-static ssize_t	intermediate(unsigned int nbr, const char *base, int *i, int fd);
+static ssize_t	intermediate(unsigned int nbr, const char *base,
+					int *i, int fd);
 
 ssize_t	ft_putnbr_base_u_fd(unsigned int nbr, const char *base, int fd)
 {

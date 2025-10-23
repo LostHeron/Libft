@@ -14,17 +14,22 @@
 #include <unistd.h>
 #include "ft_io.h"
 
-static ssize_t	iter(int fd, const char *s,
-				va_list *pptr, ssize_t (*f[128])(va_list *, ssize_t *, int fd));
-static void	init_function_array(ssize_t	(*f[128])(va_list *ptr,
-					ssize_t *count, int fd));
+static ssize_t	iter(
+					int fd,
+					const char *s,
+					va_list *pptr,
+					ssize_t (*f[128])(va_list *, ssize_t *, int fd)
+					);
+static void		init_function_array(
+					ssize_t	(*f[128])(va_list *ptr, ssize_t *count, int fd)
+					);
 
 ssize_t	ft_printf_fd(int fd, const char *s, ...)
 {
-	va_list		ptr;
-	ssize_t		(*f[128])(va_list *ptr, ssize_t	*count, int fd);
-	ssize_t		val;
+	va_list	ptr;
+	ssize_t	val;
 
+	ssize_t (*f[128])(va_list * ptr, ssize_t * count, int fd);
 	if (s == NULL)
 		return (-1);
 	init_function_array(f);

@@ -13,8 +13,8 @@
 #ifndef FT_IO_H
 # define FT_IO_H
 
-#include <sys/types.h>
-#include <stdarg.h>
+# include <sys/types.h>
+# include <stdarg.h>
 
 ssize_t	print_binary(int fd, unsigned long long *a, size_t size_of_var);
 ssize_t	ft_putchar_fd(char c, int fd);

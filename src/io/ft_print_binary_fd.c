@@ -20,7 +20,7 @@ void	fill_str(unsigned long long nb, char *str, size_t i);
 ssize_t	print_binary(int fd, unsigned long long *a, size_t size_of_var)
 {
 	unsigned long	nb;
-	char		str[256];
+	char			str[256];
 
 	if (size_of_var > sizeof(unsigned long long))
 		size_of_var = sizeof(unsigned long long);

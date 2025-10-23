@@ -73,6 +73,7 @@ LIST_DC_FILES := ft_dc_node_new.c \
 
 STRING_DIR := src/string/
 STRING_FILES := ft_strlen.c \
+				ft_strlen_safe.c \
 				ft_strcpy.c \
 				ft_strncpy.c \
 				ft_strcat.c \

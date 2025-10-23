@@ -14,14 +14,14 @@
 #include "ft_string.h"
 #include <unistd.h>
 
-static int	check_base(const char *base);
+static int		check_base(const char *base);
 static ssize_t	intermediate(unsigned long long nbr,
-				const char *base, int *i, int fd);
+					const char *base, int *i, int fd);
 
 ssize_t	ft_putnbr_base_ull_fd(unsigned long long nbr, const char *base, int fd)
 {
 	int		count;
-	ssize_t val;
+	ssize_t	val;
 
 	count = 0;
 	val = intermediate(nbr, base, &count, fd);
@@ -31,7 +31,8 @@ ssize_t	ft_putnbr_base_ull_fd(unsigned long long nbr, const char *base, int fd)
 		return (val);
 }
 
-static ssize_t	intermediate(unsigned long long nbr, const char *base, int *i, int fd)
+static ssize_t	intermediate(unsigned long long nbr, const char *base,
+					int *i, int fd)
 {
 	unsigned long long	nb_base;
 	ssize_t				val;

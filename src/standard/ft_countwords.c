@@ -13,7 +13,7 @@
 #include "ft_string.h"
 #include "ft_standard.h"
 
-size_t ft_countwords(char const *s, char *charset)
+size_t	ft_countwords(char const *s, char *charset)
 {
 	size_t	i;
 	size_t	nb_words;

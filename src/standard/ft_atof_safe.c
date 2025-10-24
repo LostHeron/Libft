@@ -139,13 +139,13 @@ static double	get_fractional_part(const char *str, int len)
 	double	res;
 
 	i = len - 1;
-	while (str[i] != '.' && i >= 0)
+	while (i >= 0 && str[i] != '.')
 		i--;
 	if (i < 0)
 		return (0);
 	res = 0;
 	i = len - 1;
-	while (ft_isdigit(str[i]))
+	while (i >= 0 && ft_isdigit(str[i]))
 	{
 		res = (res + str[i] - '0') / 10;
 		i--;

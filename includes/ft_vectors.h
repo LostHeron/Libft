@@ -27,6 +27,17 @@
 #  define SUCCESS 0
 # endif
 
+/* -> data : a void pointer to the array of data which should be cast
+ * when using the library
+ * -> size : the number of current element there is in the array
+ * -> capacity : (should never be used, only here for internal usage)
+ * the total possible element currently possible to put inside the struct
+ * -> data_size : (should never be used, only here for internal usage)
+ * the size each element take in the array
+ * -> del : a pointer to a function taking a pointer to the structure, 
+ * and returning void, which should be used to free the memory required by
+ * the structure.
+*/
 typedef struct s_vector
 {
 	void	*data;
